@@ -1,0 +1,44 @@
+:root {
+  --red-variant: #d03d40;
+  --black-variant: #1c1c1c;
+  --white: #ffffff;
+  --white-variant: #f1f1f1;
+
+  --headline-1: 6.125em;
+  --headline-2: 3.8125em;
+  --headline-3: 3.0625em;
+  --headline-4: 2.1875em;
+  --headline-5: 1.5em;
+  --headline-6: 1.25em;
+  --subtitle-1: 1em;
+  --subtitle-2: 0.875em;
+  --body-1: 1em;
+  --body-2: 0.875em;
+  --button: 0.875em;
+  --caption: 0.75em;
+  --overline: 0.625em;
+
+  --fontTitle: "Raleway", sans-serif;
+  --fontBody: "Roboto", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+body {
+  display: block;
+  max-width: 100%;
+  min-height: 100vh;
+}
+
+h1 {
+  color: var(--red-variant);
+  font-family: var(--fontTitle);
+  font-size: var(--headline-1);
+}
