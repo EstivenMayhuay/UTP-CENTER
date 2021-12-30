@@ -1,6 +1,5 @@
 const gulp = require("gulp");
 const pug = require("gulp-pug");
-const browserSync = require("browser-sync");
 
 // create task for pug
 gulp.task("pug", function () {
