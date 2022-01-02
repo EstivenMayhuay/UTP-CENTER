@@ -1,3 +1,42 @@
+-
+  let cardsLink = [
+    {
+      text: "SAE en Linea",
+      link: "http://sae.link"
+    },
+    {
+      text: "CARMEN",
+      link: "http://carmen.link"
+    },
+    {
+      text: "Chattigo",
+      link: "http://chattigo.link"
+    },
+    {
+      text: "P. Estudiante",
+      link: "http://portalestudiante.link"
+    }
+  ];
+
+  let cardsInfo = [
+    {
+      title: "Deuda Pendiente",
+      text: "¡Hola! 👋 Te saluda 'X' de SAE. Para poder conocer tu deuda pendiente, solo debes marcar al (01) 315-9600 opción 1 - 1"
+    },
+    {
+      title: "Codigo de Alumno",
+      text: "¡Hola! 👋 Te saluda 'X' de SAE. Para poder conocer tu código de alumno puedes comunicarte al (01) 315-9600 opción 1 - 2"
+    },
+    {
+      title: "A. Plataformas",
+      text: "¡Hola! 👋 Te saluda 'X' de SAE. Si tienes consultas sobre el acceso a tus plataformas UTP, puedes comunicarte al (01) 315-9600 opción 1 - 3"
+    },
+    {
+      title: "SAE",
+      text: "¡Hola! 👋 Te saluda 'X'. Si deseas comunicarte con SAE, puedes comunicarte al (01) 315-9600 opción 1 - 4"
+    }
+  ];
+
 doctype html
 html(lang="es")
 
@@ -7,4 +46,22 @@ html(lang="es")
       title UTP CENTER | Atencion al Estudiante
 
   body.grid
-    include ../include/header.pug
+    include ../includes/header.pug
+
+    main.main.grid-main
+      section.content-cardsLink
+        for cardLink of cardsLink
+          .cardLink
+            a(href=`${cardLink.link}`)= cardLink.text
+
+      section.intro
+        for cardInfo in cardsInfo
+          .cardCopy
+            .cardCopy__head
+              h2= cardInfo.title
+              p.iconCopy
+                img(src="images/icon-copy.svg", alt="icon copy")
+            .cardCopy__text
+              textarea(cols="30", rows="10")= cardInfo.text
+
+    include ../includes/footer.pug
