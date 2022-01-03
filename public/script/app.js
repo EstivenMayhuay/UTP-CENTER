@@ -25,12 +25,7 @@
   iconMenu.addEventListener("click", function () {
     let menu = this.nextElementSibling;
     let parentMenu = this.parentElement;
-    let height = 0;
 
-    parentMenu.classList.toggle("hidden");
-
-    if (menu.clientHeight == 48) height = menu.scrollHeight;
-
-    menu.style.height = `${height}px`;
+    menu.classList.toggle("showMenu");
   });
 })();
