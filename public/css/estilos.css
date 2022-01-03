@@ -65,6 +65,8 @@ body {
 /* Header */
 .header {
   position: relative;
+  position: sticky;
+  top: 0;
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
@@ -72,6 +74,7 @@ body {
   max-width: 100%;
   height: var(--hHeader);
   background: var(--white);
+  z-index: 30;
 }
 
 .logoUTP,
