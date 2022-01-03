@@ -1,3 +1,234 @@
+-
+  let menu = [
+    {
+      title: "Tramites Autogestionables",
+      childs: [
+        {
+          name: "Activacion de pagos adelantado ciclo completo"
+        },
+        {
+          name: "Reincorporación"
+        },
+        {
+          name: "Exámenes Rezagados"
+        },
+        {
+          name: "Retiro de Curso Verano 2022"
+        },
+        {
+          name: "Rectificación de Nota"
+        },
+        {
+          name: "Validación de Seguro de Salud"
+        }
+      ]
+    },
+    {
+      title: "Tramites SAE en Linea",
+      childs: [
+        {
+          name: "Cambio de Campus"
+        },
+        {
+          name: "Carta de Presentación"
+        },
+        {
+          name: "Convalidación de Asignatura"
+        },
+        {
+          name: "Duplicado de Carné Universitario"
+        },
+        {
+          name: "Registro de Fotografía"
+        },
+        {
+          name: "Cita Psicológica"
+        },
+        {
+          name: "Cambio de Carrera"
+        },
+        {
+          name: "Certificado de Estudios"
+        },
+        {
+          name: "Convalidación de Inglés"
+        },
+        {
+          name: "Factura Electrónica"
+        },
+        {
+          name: "Retiro de Periodo Lectivo"
+        },
+        {
+          name: "Cambio de Modalidad"
+        },
+        {
+          name: "Constancia de Estudios"
+        },
+        {
+          name: "Emisión Carné Universitario"
+        },
+        {
+          name: "Reembolso"
+        },
+        {
+          name: "Autenticación de Sílabus"
+        }
+      ]
+    },
+    {
+      title: "Tramites Grados y Titulos",
+      childs: [
+        {
+          name: "Ampliación del Plazo de Vigencia"
+        },
+        {
+          name: "Constancia de Egresado"
+        },
+        {
+          name: "Programa Especial de Titulación"
+        },
+        {
+          name: "Aprobación del Tema de Tesis"
+        },
+        {
+          name: "Grado Acádemico de Bachiller"
+        },
+        {
+          name: "Programa de Titulación"
+        },
+        {
+          name: "Aprobación del Trabajo de Suficiencia profesional"
+        },
+        {
+          name: "Obtención del Título profesional"
+        }
+      ]
+    },
+    {
+      title: "Tramites de Admision",
+      childs: [
+        {
+          name: "Cambio de Carrera y Campus (Ingresantes)"
+        },
+        {
+          name: "Reembolso"
+        },
+        {
+          name: "Cambio de Turno"
+        },
+        {
+          name: "Emisión de Factura Electrónica"
+        }
+      ]
+    },
+    {
+      title: "Tramites PAU",
+      childs: [
+        {
+          name: "Rectificación de Notas"
+        },
+        {
+          name: "Retiro de Asignatura"
+        },
+        {
+          name: "Cambio de Turno (PAU)"
+        },
+        {
+          name: "Retiro de Periodo (PAU)"
+        },
+        {
+          name: "Constancia de Estudios (PAU)"
+        },
+        {
+          name: "Actualización de Datos Personales"
+        },
+      ]
+    },
+    {
+      title: "Becas - Convenios",
+      childs: [
+        {
+          name: "Beca Alto Potencial"
+        },
+        {
+          name: "Beca Peru Champs"
+        },
+        {
+          name: "Beca por Orfandad"
+        },
+        {
+          name: "Beca Excelencia Deportivo Alta Competencia"
+        },
+        {
+          name: "Beca por Discapacidad"
+        },
+        {
+          name: "Beca por Excelencia Academica"
+        },
+        {
+          name: "Beca Madre de Dios"
+        },
+        {
+          name: "Beca Programa Dep. (Prodac)"
+        },
+        {
+          name: "Beca Socioeconómica"
+        },
+        {
+          name: "Beca Talento"
+        },
+        {
+          name: "Convenios Generales"
+        }
+      ]
+    },
+    {
+      title: "Validacion de Plataformas",
+      childs: [
+        {
+          name: "hairton"
+        },
+        {
+          name: "valeria"
+        }
+      ]
+    },
+    {
+      title: "Anexos",
+      childs: [
+        {
+          name: "hairton"
+        },
+        {
+          name: "valeria"
+        }
+      ]
+    },
+    {
+      title: "Servicios Universitarios",
+      childs: [
+        {
+          name: "hairton"
+        },
+        {
+          name: "valeria"
+        }
+      ]
+    },
+    {
+      title: "Matricula",
+      childs: [
+        {
+          name: "hairton"
+        },
+        {
+          name: "valeria"
+        }
+      ]
+    }
+  ];
+
 header.header.grid-header
   p.logoUTP
     svg(width="80", height="27" viewBox="0 0 80 27" fill="none" xmlns="http://www.w3.org/2000/svg")
@@ -10,3 +241,16 @@ header.header.grid-header
   
   p.iconMenu
     img(src="images/icon-menu.svg")
+
+  nav.nav
+    ul.menu
+      each list in menu
+        li.menu__list
+          .list__button.list__button--click
+            a.menu__link(href="#")= list.title
+            p.iconArrow
+              img(src="images/icon-arrow.svg", alt="icon arrow")
+          ul.subMenu
+            each subList in list.childs
+              li.subMenu__list
+                a.subMenu__link(href="#")= subList.name
