@@ -22,6 +22,7 @@
   --fontBody: "Roboto", sans-serif;
 
   --hCardInfo: 140px;
+  --hHeader: 61px;
 }
 
 *,
@@ -69,6 +70,8 @@ body {
   flex-flow: row nowrap;
   align-items: center;
   padding: 24px 16px;
+  max-width: 100%;
+  height: var(--hHeader);
   background: var(--white);
 }
 
@@ -88,7 +91,7 @@ body {
 /* Navigation */
 .nav {
   position: absolute;
-  top: 48px;
+  top: var(--hHeader);
   left: 0;
   display: none;
   width: 100%;
