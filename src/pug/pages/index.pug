@@ -22,21 +22,25 @@
     {
       id: "card-1",
       title: "Deuda Pendiente",
+      idText: "textarea-1",
       text: "¡Hola! 👋 Te saluda 'X' de SAE. Para poder conocer tu deuda pendiente, solo debes marcar al (01) 315-9600 opción 1 - 1"
     },
     {
       id: "card-2",
       title: "Codigo de Alumno",
+      idText: "textarea-2",
       text: "¡Hola! 👋 Te saluda 'X' de SAE. Para poder conocer tu código de alumno puedes comunicarte al (01) 315-9600 opción 1 - 2"
     },
     {
       id: "card-3",
       title: "A. Plataformas",
+      idText: "textarea-3",
       text: "¡Hola! 👋 Te saluda 'X' de SAE. Si tienes consultas sobre el acceso a tus plataformas UTP, puedes comunicarte al (01) 315-9600 opción 1 - 3"
     },
     {
       id: "card-4",
       title: "SAE",
+      idText: "textarea-4",
       text: "¡Hola! 👋 Te saluda 'X'. Si deseas comunicarte con SAE, puedes comunicarte al (01) 315-9600 opción 1 - 4"
     }
   ];
@@ -65,7 +69,7 @@ html(lang="es")
               h2= cardInfo.title
               p.iconCopy
                 img(src="images/icon-copy.svg", alt="icon copy")
-            textarea(readonly="true")= cardInfo.text
+            textarea(readonly="true" class="textCopy")= cardInfo.text
 
     include ../includes/footer.pug
 
