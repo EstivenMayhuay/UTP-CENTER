@@ -70,7 +70,7 @@ body {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
-  padding: 24px 16px;
+  padding: 24px;
   max-width: 100%;
   height: var(--hHeader);
   background: var(--white);
@@ -84,11 +84,11 @@ body {
 }
 
 .iconMenu {
-  right: 16px;
+  right: 24px;
 }
 
 .logoUTP {
-  left: 16px;
+  left: 24px;
 }
 
 /* Navigation */
@@ -100,7 +100,7 @@ body {
   width: 100%;
   height: auto;
   background: var(--white);
-  padding: 24px 16px;
+  padding: 24px;
   box-shadow: 15px 15px 30px -15px rgba(0, 0, 0, 0.5);
   overflow: hidden;
   transition: height .4s;
@@ -172,13 +172,13 @@ body {
   flex-flow: row wrap;
   align-items: center;
   justify-content: center;
-  column-gap: 16px;
+  column-gap: 24px;
   row-gap: 24px;
-  padding: 24px 0;
+  padding: 24px;
 }
 
 .cardLink {
-  flex: calc(100% / 2 - 32px);
+  flex: calc(100% / 2 - 24px);
   max-width: 140px;
   height: auto;
   padding: 24px 16px;
@@ -217,8 +217,8 @@ body {
 }
 
 .cardCopy {
-  flex: calc(100% - 32px);
-  min-width: calc(100% - 32px);
+  flex: calc(100% - 48px);
+  min-width: calc(100% - 48px);
   margin: 0 auto;
   box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.25);
   border-radius: 0 0 15px 15px;
