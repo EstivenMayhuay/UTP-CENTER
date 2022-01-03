@@ -1,23 +1,4 @@
 -
-  let cardsLink = [
-    {
-      text: "SAE en Linea",
-      link: "http://sae.link"
-    },
-    {
-      text: "CARMEN",
-      link: "http://carmen.link"
-    },
-    {
-      text: "Chattigo",
-      link: "http://chattigo.link"
-    },
-    {
-      text: "P. Estudiante",
-      link: "http://portalestudiante.link"
-    }
-  ];
-
   let cardsInfo = [
     {
       id: "card-1",
@@ -42,23 +23,18 @@
   ];
 
 doctype html
-html(lang="es")
-
+html(lang="en")
   include ../includes/head.pug
-
+    
     block title
-      title UTP CENTER | Atencion al Estudiante
+      title Activacion de Pago adelantado Ciclo Completo | UTP CENTER
 
   body.grid
     include ../includes/header.pug
 
     main.main.grid-main
-      section.content-cardsLink
-        for cardLink of cardsLink
-          .cardLink
-            a(href=`${cardLink.link}`)= cardLink.text
-
       section.intro
+        h1.title Activacion de pagos adelantado ciclo completo
         for cardInfo in cardsInfo
           .cardCopy(id=`${cardInfo.id}`)
             .cardCopy__head
