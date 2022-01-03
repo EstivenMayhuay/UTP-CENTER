@@ -20,6 +20,8 @@
 
   --fontTitle: "Raleway", sans-serif;
   --fontBody: "Roboto", sans-serif;
+
+  --hCardInfo: 140px;
 }
 
 *,
@@ -87,7 +89,6 @@ body {
 
 /* content cardsLink */
 .content-cardsLink {
-  outline: 2px solid blue;
   display: flex;
   flex-flow: row wrap;
   align-items: center;
@@ -125,6 +126,59 @@ body {
 
 .cardLink:hover {
   background: var(--white);
+}
+
+/* intro */
+.intro {
+  display: flex;
+  flex-flow: column wrap;
+  row-gap: 24px;
+  padding: 24px 0;
+  width: 100%;
+}
+
+.cardCopy {
+  flex: calc(100% - 32px);
+  min-width: calc(100% - 32px);
+  margin: 0 auto;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  border-radius: 0 0 15px 15px;
+}
+
+.cardCopy__head {
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  background: var(--red-variant);
+  padding: 16px 8px;
+}
+
+.cardCopy__head > h2 {
+  font-family: var(--fontTitle);
+  color: var(--white);
+  font-size: var(--subtitle-1);
+}
+
+.iconCopy {
+  position: absolute;
+  right: 8px;
+}
+
+textarea {
+  display: block;
+  width: 100%;
+  min-height: 100%;
+  font-family: var(--fontBody);
+  color: var(--black-variant);
+  font-weight: 600;
+  resize: none;
+  padding: 16px 8px;
+  border: none;
+  outline: none;
+  font-size: var(--body-2);
+  line-height: 1.6rem;
 }
 
 /* Footer */
