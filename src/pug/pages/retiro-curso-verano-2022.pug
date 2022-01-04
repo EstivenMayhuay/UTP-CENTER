@@ -1,0 +1,59 @@
+-
+  let cardsInfo = [
+    {
+      id: "saludo",
+      title: "Saludo",
+      text: "Hola (nombre del alumno), te comento que puedes autogestionar tu retiro de Curso siguiendo estos pasos:",
+      class: "smallCard"
+    },
+    {
+      id: "descripccion",
+      title: "Descripccion",
+      text: `
+      1. Ingresar a portalestudiante.utp.edu.pe, elegir la opción de TRÁMITE RETIRO DE CURSO y seleccionar el botón verde.
+      2. Realiza el pago del trámite a través de cualquier canal de los bancos autorizados: Interbank, Scotiabank, BCP o BBVA.
+      3. Luego ingresa al portal de estudiante opción Trámites y selecciona la(s) asignatura(s) que desea retirar. Podrás validar que tu retiro fue efectivo, porque el curso registrará en estado Retirado.`,
+      class: ""
+    },
+    {
+      id: "adicionales",
+      title: "Adicionales",
+      text: `Recuerda que:
+      - Puedes retirarte de varias asignaturas por el mismo pago en la misma transacción. Solo debe dejar una asignatura en curso, como mínimo.
+      - No debes tener el (los) curso(s) inmerso en un proceso disciplinario o con sanción vigente.
+      - El costo del trámite es de S/110.00 y la fecha límite para poder autogestionarlo es hasta el 22 de enero (con recálculo de cuotas) y 25 de febrero (sin modificación de cuotas).
+      - Puedes revisar mayor información mediante el siguiente link 👉 bit.ly/RetiroAsignaturaUTP`,
+      class: ""
+    },
+    {
+      id: "para-el-asesor",
+      title: "Para el Asesor",
+      text: "No olvides informarle al alumno si es que cuenta o no aun con las fechas de recalculo de cuotas",
+      class: "smallCard"
+    }
+  ];
+
+doctype html
+html(lang="es")
+  include ../includes/head.pug
+    
+    block title
+      title Retiro de Curso Verano 2022 | UTP CENTER
+
+  body.grid
+    include ../includes/header.pug
+
+    main.main.grid-main
+      section.intro
+        h1.title Retiro de Curso Verano 2022
+        for cardInfo in cardsInfo
+          .cardCopy(id=`${cardInfo.id}` class=`${cardInfo.class}`)
+            .cardCopy__head
+              h2= cardInfo.title
+              p.iconCopy
+                img(src="images/icon-copy.svg", alt="icon copy")
+            textarea(readonly="true" class="textCopy")= cardInfo.text
+
+    include ../includes/footer.pug
+
+    script(src="script/app.js") 

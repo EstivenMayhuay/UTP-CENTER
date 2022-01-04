@@ -1,0 +1,63 @@
+-
+  let cardsInfo = [
+    {
+      id: "saludo",
+      title: "Saludo",
+      text: "Hola (nombre del alumno), coméntame ¿con qué tipo de seguro cuentas actualmente?",
+      class: "smallCard"
+    },
+    {
+      id: "descripccion",
+      title: "Descripccion",
+      text: `
+      1. Ingresa al Portal del Estudiante, elige la opción Trámites y en la sección Autogestión selecciona Solicitud de Exoneración del Programa de Salud Estudiantil. (PSE)
+      2. Luego de revisar y cumplir con los requisitos para la exoneración, asegúrate de aceptar los términos y condiciones.
+      3. Registra el código Captcha de verificación y dale click en Enviar Solicitud.
+      4. Luego de verificar tu solicitud te aparecerá un mensaje con el resultado:
+        - Solicitud aprobada: Visualiza el estado de tu solicitud en la opción Trámites, sección Historial de Trámites Solicitados y el pago exonerado en la opción Estado de Cuenta - Pagos.
+        - Solicitud pendiente: No se encontraron registros para la exoneración automática, deberás adjuntar un archivo que valide que cuentes con un seguro vigente. El plazo de atención es de 3 días hábiles posteriores al registro de tu solicitud.
+      5. Finalmente, el plazo para autogestionar tu exoneración del Programa de Seguro Estudiantil es hasta:`,
+      class: ""
+    },
+    {
+      id: "adicionales",
+      title: "Adicionales",
+      text: `
+      Reincorporados: 30 de diciembre
+      Reinscritos: 30 de diciembre
+      Ingresantes: Durante el proceso de inscripción
+      Dato: Recuerda que puedes dar seguimiento a tu solicitud ingresando a tu Portal del Estudiante, opción Trámites / Historial de trámites solicitados.`,
+      class: ""
+    },
+    {
+      id: "para-el-asesor",
+      title: "Para el Asesor",
+      text: "Solo se gestiona los casos confirmdos cuyo sustento esté contemplado en el Reglamento de Estudios, Art. 47: Cuando a consideración del estudiante, existe en una evaluación final un error en la suma del puntaje o una respuesta no calificada.",
+      class: "hideCard"
+    }
+  ];
+
+doctype html
+html(lang="es")
+  include ../includes/head.pug
+    
+    block title
+      title  Validación de Seguro de Salud | UTP CENTER
+
+  body.grid
+    include ../includes/header.pug
+
+    main.main.grid-main
+      section.intro
+        h1.title Validación de Seguro de Salud
+        for cardInfo in cardsInfo
+          .cardCopy(id=`${cardInfo.id}` class=`${cardInfo.class}`)
+            .cardCopy__head
+              h2= cardInfo.title
+              p.iconCopy
+                img(src="images/icon-copy.svg", alt="icon copy")
+            textarea(readonly="true" class="textCopy")= cardInfo.text
+
+    include ../includes/footer.pug
+
+    script(src="script/app.js") 

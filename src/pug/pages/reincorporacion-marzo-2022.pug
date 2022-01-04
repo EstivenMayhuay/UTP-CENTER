@@ -1,0 +1,60 @@
+-
+  let cardsInfo = [
+    {
+      id: "saludo",
+      title: "Saludo",
+      text: "Hola (nombre del alumno), te comento que ya tenemos disponibles las fechas para nuestro proceso de reincorporación.",
+      class: "smallCard"
+    },
+    {
+      id: "descripccion",
+      title: "Descripccion",
+      text: `Ahora, el trámite es AUTOGESTIONABLE; para ello debes cumplir con los siguientes requisitos:
+      - No debes de tener deudas pendientes. Ingresa aquí para ver cómo puedes revisar tu deuda y los canales de pago bit.ly/Inf1_UTP
+      - No estar suspendido por desaprobar una o más asignaturas por tercera vez.
+      - No haber desaprobado una o más asignaturas por cuarta vez.
+      - No estar suspendido por medidas disciplinarias.
+      - No tener documentación pendiente de entrega del proceso de admisión.`,
+      class: ""
+    },
+    {
+      id: "adicionales",
+      title: "Adicionales",
+      text: `El trámite de reincorporación no tiene costo si lo autogestionas hasta el 10 de diciembre. Pasada esa fecha, el costo será de S/55.00. Asimismo, debes tener en cuenta los siguientes trámos:
+      - Matricula Preferencial: Si gestionas el trámite hasta el 4 de marzo.
+      - Matriucla Regular: Si gestionas el trámite del 05 al 11 de marzo.
+      - Matricula Extemporánea: Si gestionas el trámite del 12 al 21 de marzo Recuerda que para acceder a tu Portal del Estudiante debes hacerlo con código de alumno y contraseña. Si no la recuerdas, restablécela siguiendo los pasos del instructivo 👉 bit.ly/InstrucContrasenaUTP`,
+      class: ""
+    },
+    {
+      id: "para-el-asesor",
+      title: "Para el Asesor",
+      text: "El alumno puede realizar 3 o 2 cambios por el precio de s/165.00, es decir, cambio de modalidad + carrera + sede, siempre y cuando lo realicé en una misma solicitud.",
+      class: "smallCard"
+    }
+  ];
+
+doctype html
+html(lang="es")
+  include ../includes/head.pug
+    
+    block title
+      title Reincorporacion Marzo 2022 | UTP CENTER
+
+  body.grid
+    include ../includes/header.pug
+
+    main.main.grid-main
+      section.intro
+        h1.title Reincorporacion Marzo 2022 
+        for cardInfo in cardsInfo
+          .cardCopy(id=`${cardInfo.id}` class=`${cardInfo.class}`)
+            .cardCopy__head
+              h2= cardInfo.title
+              p.iconCopy
+                img(src="images/icon-copy.svg", alt="icon copy")
+            textarea(readonly="true" class="textCopy")= cardInfo.text
+
+    include ../includes/footer.pug
+
+    script(src="script/app.js") 

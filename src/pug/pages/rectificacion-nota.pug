@@ -1,0 +1,64 @@
+-
+  let cardsInfo = [
+    {
+      id: "saludo",
+      title: "Saludo",
+      text: "Hola (nombre del alumno), te comento que puedes autogestionar tu rectificación de nota con estos pasos:",
+      class: "smallCard"
+    },
+    {
+      id: "descripccion",
+      title: "Descripccion",
+      text: `1. Ingresar a Portal del Estudiante, elige la opción de MIS RECTIFICACIONES.
+      2. Selecciona el curso del cual deseas solicitar la rectificación.
+      3. Ingresa los datos:
+        - Tipo de Evaluación: Evaluación de la cual se desea modificar la nota.
+        - Motivo: Por Reglamento de Estudios solo tenemos dos Pregunta no calificada o Error de Suma.
+        - Comentario: Detalle el motivo por el cual está solicitando la modificación; explique su caso.
+        - Documento: Adjunte el sustento de la rectificación solicitada. Sólo puede adjuntar un documento en PDF o JPG con un peso no mayor a 4Mb.
+      4. Podrás verificar el estado de tu solicitud en la parte inferior de la pantalla de rectificaciones. El plazo de atención es de 7 días hábiles posteriores al registro de tu solicitud.`,
+      class: ""
+    },
+    {
+      id: "adicionales",
+      title: "Adicionales",
+      text: `
+      1. Se solicita el trámite Rectificación de Nota - Evaluación final, dentro de las 24 horas posteriores a la publicación de la nota en el portal del estudiante.
+      2. Para Evaluaciones continuas, 7 días calendario desde la publicación de la nota.
+      3. Solo se puede solicitar rectificación de nota en 2 casos:
+        a) Si existe un error en la suma de la nota
+        b) Si existe una pregunta no calificada`,
+      class: ""
+    },
+    {
+      id: "para-el-asesor",
+      title: "Para el Asesor",
+      text: "Solo se gestiona los casos confirmdos cuyo sustento esté contemplado en el Reglamento de Estudios, Art. 47: Cuando a consideración del estudiante, existe en una evaluación final un error en la suma del puntaje o una respuesta no calificada.",
+      class: "smallCard"
+    }
+  ];
+
+doctype html
+html(lang="es")
+  include ../includes/head.pug
+    
+    block title
+      title Rectificación de Nota | UTP CENTER
+
+  body.grid
+    include ../includes/header.pug
+
+    main.main.grid-main
+      section.intro
+        h1.title Rectificación de Nota
+        for cardInfo in cardsInfo
+          .cardCopy(id=`${cardInfo.id}` class=`${cardInfo.class}`)
+            .cardCopy__head
+              h2= cardInfo.title
+              p.iconCopy
+                img(src="images/icon-copy.svg", alt="icon copy")
+            textarea(readonly="true" class="textCopy")= cardInfo.text
+
+    include ../includes/footer.pug
+
+    script(src="script/app.js") 
