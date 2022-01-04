@@ -59,6 +59,8 @@ html(lang="es")
             a(href=`${cardLink.link}`)= cardLink.text
 
       section.intro
+        h1.title Datos Generales
+
         for cardInfo in cardsInfo
           .cardCopy(id=`${cardInfo.id}`)
             .cardCopy__head

@@ -1,7 +1,14 @@
 -
   let menu = [
     {
+      title: "Datos Generales",
+      subMenu: false,
+      link: "index.html"
+    },
+    {
       title: "Tramites Autogestionables",
+      subMenu: true,
+      link: "#",
       childs: [
         {
           name: "Activacion de pagos adelantado ciclo completo",
@@ -31,6 +38,8 @@
     },
     {
       title: "Tramites SAE en Linea",
+      subMenu: true,
+      link: "#",
       childs: [
         {
           name: "Cambio de Campus",
@@ -100,6 +109,8 @@
     },
     {
       title: "Tramites Grados y Titulos",
+      subMenu: true,
+      link: "#",
       childs: [
         {
           name: "Ampliación del Plazo de Vigencia",
@@ -137,6 +148,8 @@
     },
     {
       title: "Tramites de Admision",
+      subMenu: true,
+      link: "#",
       childs: [
         {
           name: "Cambio de Carrera y Campus (Ingresantes)",
@@ -158,6 +171,8 @@
     },
     {
       title: "Tramites PAU",
+      subMenu: true,
+      link: "#",
       childs: [
         {
           name: "Rectificación de Notas",
@@ -186,6 +201,8 @@
     },
     {
       title: "Becas - Convenios",
+      subMenu: true,
+      link: "#",
       childs: [
         {
           name: "Beca Alto Potencial",
@@ -235,55 +252,23 @@
     },
     {
       title: "Validacion de Plataformas",
-      childs: [
-        {
-          name: "hairton",
-          link: "activacion-pagos-adelantado-ciclo-completo.html"
-        },
-        {
-          name: "valeria",
-          link: "activacion-pagos-adelantado-ciclo-completo.html"
-        }
-      ]
+      subMenu: false,
+      link: "#"
     },
     {
       title: "Anexos",
-      childs: [
-        {
-          name: "hairton",
-          link: "activacion-pagos-adelantado-ciclo-completo.html"
-        },
-        {
-          name: "valeria",
-          link: "activacion-pagos-adelantado-ciclo-completo.html"
-        }
-      ]
+      subMenu: false,
+      link: "#"
     },
     {
       title: "Servicios Universitarios",
-      childs: [
-        {
-          name: "hairton",
-          link: "activacion-pagos-adelantado-ciclo-completo.html"
-        },
-        {
-          name: "valeria",
-          link: "activacion-pagos-adelantado-ciclo-completo.html"
-        }
-      ]
+      subMenu: false,
+      link: "#"
     },
     {
       title: "Matricula",
-      childs: [
-        {
-          name: "hairton",
-          link: "activacion-pagos-adelantado-ciclo-completo.html"
-        },
-        {
-          name: "valeria",
-          link: "activacion-pagos-adelantado-ciclo-completo.html"
-        }
-      ]
+      subMenu: false,
+      link: "#"
     }
   ];
 
@@ -303,12 +288,17 @@ header.header.grid-header
   nav.nav
     ul.menu
       each list in menu
-        li.menu__list
-          .list__button.list__button--click
-            a.menu__link(href="#")= list.title
-            p.iconArrow
-              img(src="images/icon-arrow.svg", alt="icon arrow")
-          ul.subMenu
-            each subList in list.childs
-              li.subMenu__list
-                a.subMenu__link(href=`${subList.link}`)= subList.name
+        if list.subMenu == true
+          li.menu__list
+            .list__button.list__button--click
+              a.menu__link(href=`${list.link}`)= list.title
+              p.iconArrow
+                img(src="images/icon-arrow.svg", alt="icon arrow")
+            ul.subMenu
+              each subList in list.childs
+                li.subMenu__list
+                  a.subMenu__link(href=`${subList.link}`)= subList.name
+        else if list.subMenu == false
+          li.menu__list
+            .list__button.list__button--click
+              a.menu__link(href=`${list.link}`)= list.title
