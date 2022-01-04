@@ -229,6 +229,10 @@ body {
   --hCardCopy: 100px,
 }
 
+.hideCard {
+  display: none;
+}
+
 .cardCopy {
   flex: 1;
   max-width: 100%;
