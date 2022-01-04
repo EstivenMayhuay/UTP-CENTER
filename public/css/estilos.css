@@ -23,6 +23,8 @@
 
   --hCardInfo: 140px;
   --hHeader: 61px;
+  --hCardCopy: 200px;
+  --hCardCopyHead: 52px;
 }
 
 *,
@@ -209,10 +211,10 @@ body {
 /* intro */
 .intro {
   display: flex;
-  flex-flow: column wrap;
-  row-gap: 24px;
+  flex-flow: column;
+  gap: 24px;
   padding: 24px;
-  width: 100%;
+  background: var(--white-variant);
 }
 
 .title {
@@ -223,12 +225,15 @@ body {
   text-align: center;
 }
 
+.smallCard {
+  --hCardCopy: 100px,
+}
+
 .cardCopy {
-  flex: 100%;
-  min-width: 100%;
-  margin: 0 auto;
+  flex: 1;
+  max-width: 100%;
+  height: var(--hCardCopy);
   box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.25);
-  border-radius: 0 0 15px 15px;
 }
 
 .cardCopy__head {
@@ -236,6 +241,8 @@ body {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
+  width: 100%;
+  height: var(--hCardCopyHead);
   background: var(--red-variant);
   padding: 16px 8px;
 }
@@ -255,7 +262,7 @@ body {
 textarea {
   display: block;
   width: 100%;
-  min-height: 100%;
+  height: calc(var(--hCardCopy) - var(--hCardCopyHead));
   font-family: var(--fontBody);
   color: var(--black-variant);
   font-weight: 600;
