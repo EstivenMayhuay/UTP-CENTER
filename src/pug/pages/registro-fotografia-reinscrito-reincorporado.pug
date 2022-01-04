@@ -1,0 +1,56 @@
+-
+  let cardsInfo = [
+    {
+      id: "saludo",
+      title: "Saludo",
+      text: "Hola (nombre del alumno), el trámite no tiene costo, solo debes registrar tu fotografía por el portal de SAE en línea bit.ly/FotografíaUTP adjuntando tu foto con las siguientes características:",
+      class: "smallCard"
+    },
+    {
+      id: "descripccion",
+      title: "Descripccion",
+      text: `
+      - Tamaño carné, a colores y de fondo blanco.
+      - Peso del archivo entre 30 a 50 KB.
+      - Resolución 300 DPI (Es una unidad de medida para resoluciones de impresión).
+      - Formato JPG, el nombre del archivo debes colocar tu código de alumno y tienes que estar con gorras ni lentes.`,
+      class: ""
+    },
+    {
+      id: "adicionales",
+      title: "Adicionales",
+      text: "El plazo de atención es de 3 días hábiles posterior al ingreso de la solicitud y se confirma al correo que coloques en la solicitud.",
+      class: "smallCard"
+    },
+    {
+      id: "para-el-asesor",
+      title: "Para el Asesor",
+      text: "",
+      class: "hideCard"
+    }
+  ];
+
+doctype html
+html(lang="es")
+  include ../includes/head.pug
+    
+    block title
+      title Registro de Fotografía Reinscrito / Reincorporado | UTP CENTER
+
+  body.grid
+    include ../includes/header.pug
+
+    main.main.grid-main
+      section.intro
+        h1.title Registro de Fotografía Reinscrito / Reincorporado 
+        for cardInfo in cardsInfo
+          .cardCopy(id=`${cardInfo.id}` class=`${cardInfo.class}`)
+            .cardCopy__head
+              h2= cardInfo.title
+              p.iconCopy
+                img(src="images/icon-copy.svg", alt="icon copy")
+            textarea(readonly="true" class="textCopy")= cardInfo.text
+
+    include ../includes/footer.pug
+
+    script(src="script/app.js") 

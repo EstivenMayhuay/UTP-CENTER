@@ -1,0 +1,65 @@
+-
+  let cardsInfo = [
+    {
+      id: "saludo",
+      title: "Saludo",
+      text: "Hola (nombre del alumno), para solicitar una carta de presentación para visita a empresas los pasos son:",
+      class: "smallCard"
+    },
+    {
+      id: "descripccion",
+      title: "Descripccion",
+      text: `
+      1. Registrar la solicitud en el portal SAE en Línea eligiendo el tipo de trámite Convalidación de asignatura.
+      2. Adjunta el formato Solicitud de convalidación externa y la Declaración Jurada debidamente completa y firmada más tu DNI escaneado ambas caras. Descarga los formatos aquí: https://bit.ly/3nVVHbu
+      3. Adjuntar los siguientes documentos en formato PDF legible:
+        - Sílabo(s) del curso o cursos que presentas para convalidar con el sello de la institución de origen.
+        - Certificado de Estudios de la institución de origen.
+        - Los documentos deben presentarse en formato PDF con el nombre de la asignatura a convalidar.
+        - Si son varios archivos comprimirlos en formato .RAR o .ZIP
+
+      Una vez levantada las restricciones impuestas por el Estado, entregar la documentación física en la Oficina del SAE de tu campus para validar la documentación original versus los escaneados. Se devuelven los documentos originales.
+
+      4. La Dirección Académica correspondiente emitirá un informe con las asignaturas a convalidar dentro de los 15 días hábiles posteriores a la entrega de los documentos.
+      5. El pago por concepto de "Convalidación de Asignatura", de acuerdo al tarifario vigente es de S/55.00 soles por cada curso convalidado, el cual será cargado a tu cuenta una vez que recibas respuesta de la evaluación por convalidación.
+      6. Por último, los cursos a convalidar serán registrados en el sistema. Y los podrás visualizar en la opción Avance en Plan de Estudios de tu Portal del Estudiante.`,
+      class: ""
+    },
+    {
+      id: "adicionales",
+      title: "Adicionales",
+      text: "El plazo para enviar la solicitud es desde el 09 de agosto hasta el 01 de septiembre.",
+      class: "smallCard"
+    },
+    {
+      id: "para-el-asesor",
+      title: "Para el Asesor",
+      text: "Tener en cuenta que no se pueden convalidar cursos desaprobados y el alumno debe estar matriculado en el ciclo actual para gestionar el trámite.",
+      class: "smallCard"
+    }
+  ];
+
+doctype html
+html(lang="es")
+  include ../includes/head.pug
+    
+    block title
+      title Convalidación de Asignatura | UTP CENTER
+
+  body.grid
+    include ../includes/header.pug
+
+    main.main.grid-main
+      section.intro
+        h1.title Convalidación de Asignatura
+        for cardInfo in cardsInfo
+          .cardCopy(id=`${cardInfo.id}` class=`${cardInfo.class}`)
+            .cardCopy__head
+              h2= cardInfo.title
+              p.iconCopy
+                img(src="images/icon-copy.svg", alt="icon copy")
+            textarea(readonly="true" class="textCopy")= cardInfo.text
+
+    include ../includes/footer.pug
+
+    script(src="script/app.js") 

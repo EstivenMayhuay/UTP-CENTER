@@ -1,0 +1,60 @@
+-
+  let cardsInfo = [
+    {
+      id: "saludo",
+      title: "Saludo",
+      text: "Hola (nombre del alumno), para solicitar una carta de presentación para visita a empresas los pasos son:",
+      class: "smallCard"
+    },
+    {
+      id: "descripccion",
+      title: "Descripccion",
+      text: `Registra tu solicitud en el “Portal de SAE en Línea”, completando los datos requeridos. En el campo “Detalle de la solicitud” es importante que coloques:
+      - El nombre de la empresa que deseas visitar.
+      - Nombre de la persona y cargo a quien va dirigido la carta.
+      - Nombre de la asignatura.
+      - Motivo de la visita.
+      - Tus datos completos y/o los datos de todos los integrantes que asistirán (DNI y Código UTP), en caso se trate de una visita grupal.
+      - Dato: El plazo de atención es de 3 días hábiles. No tiene costo.`,
+      class: ""
+    },
+    {
+      id: "adicionales",
+      title: "Adicionales",
+      text: `Ten en cuenta que:
+      - Esta carta será otorgada solo a estudiantes matriculados en el periodo lectivo en curso.
+      - La conformidad u observaciones a tu trámite serán enviadas a tu correo electrónico dentro de los plazos establecidos.`,
+      class: "smallCard"
+    },
+    {
+      id: "para-el-asesor",
+      title: "Para el Asesor",
+      text: "",
+      class: "hideCard"
+    }
+  ];
+
+doctype html
+html(lang="es")
+  include ../includes/head.pug
+    
+    block title
+      title Carta de Presentación | UTP CENTER
+
+  body.grid
+    include ../includes/header.pug
+
+    main.main.grid-main
+      section.intro
+        h1.title Carta de Presentación
+        for cardInfo in cardsInfo
+          .cardCopy(id=`${cardInfo.id}` class=`${cardInfo.class}`)
+            .cardCopy__head
+              h2= cardInfo.title
+              p.iconCopy
+                img(src="images/icon-copy.svg", alt="icon copy")
+            textarea(readonly="true" class="textCopy")= cardInfo.text
+
+    include ../includes/footer.pug
+
+    script(src="script/app.js") 

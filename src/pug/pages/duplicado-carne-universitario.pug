@@ -1,0 +1,65 @@
+-
+  let cardsInfo = [
+    {
+      id: "saludo",
+      title: "Saludo",
+      text: "",
+      class: "hideCard"
+    },
+    {
+      id: "descripccion",
+      title: "Descripccion",
+      text: `
+      - Registra tu solicitud en el portal SAE, indicando la dirección y referencia para llegar al punto de entrega.
+      - En el correo de respuesta te confirmaremos el monto total a pagar por el duplicado del carné (S/60) y delivery (de ser el caso), adjuntando el link del formulario para que registres tus datos, 48 horas después de llenado dicho formulario se habilitarán los importes.
+      - Realiza el pago en Bancos autorizados: Scotiabank, BBVA, BCP, Interbank.
+
+      Actualmente contamos con dos modalidades de entrega:
+        - Delivery (costo adicional según Tarifario Referencial Solo LIMA)
+        - Recojo en campus (Excepcionalmente, previa coordinación del caso)`,
+      class: ""
+    },
+    {
+      id: "adicionales",
+      title: "Adicionales",
+      text: `Tener en cuenta que:
+      - La vigencia de este carné 2021 es de 1 año desde la emisión del carné original. La emisión del nuevo carné, será informado oportunamente por Sunedu.
+      - Debes encontrarte matriculado en el presente período académico.
+      - No debes estar suspendido por sanción disciplinaria.
+      - Tener fotografía colgada en el portal del estudiante, caso contrario, puedes guiarte del siguiente link: bit.ly/FotografíaUTP"
+
+      El tiempo de entrega del carné universitario dependerá de la fecha, cantidad de solicitudes recibidas y el horario de libre tránsito dispuesto por el Gobierno . Para mayor información ingresa al siguiente enlace 👉 bit.ly/duplicadocarné`,
+      class: ""
+    },
+    {
+      id: "para-el-asesor",
+      title: "Para el Asesor",
+      text: "",
+      class: "hideCard"
+    }
+  ];
+
+doctype html
+html(lang="es")
+  include ../includes/head.pug
+    
+    block title
+      title Duplicado de Carné Universitario | UTP CENTER
+
+  body.grid
+    include ../includes/header.pug
+
+    main.main.grid-main
+      section.intro
+        h1.title Duplicado de Carné Universitario
+        for cardInfo in cardsInfo
+          .cardCopy(id=`${cardInfo.id}` class=`${cardInfo.class}`)
+            .cardCopy__head
+              h2= cardInfo.title
+              p.iconCopy
+                img(src="images/icon-copy.svg", alt="icon copy")
+            textarea(readonly="true" class="textCopy")= cardInfo.text
+
+    include ../includes/footer.pug
+
+    script(src="script/app.js") 

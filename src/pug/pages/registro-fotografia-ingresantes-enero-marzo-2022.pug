@@ -1,0 +1,56 @@
+-
+  let cardsInfo = [
+    {
+      id: "saludo",
+      title: "Saludo",
+      text: "Hola (nombre del alumno), para registrar tu fotografía debes ingresar a: bit.ly/RegistroFotoUTP",
+      class: "smallCard"
+    },
+    {
+      id: "descripccion",
+      title: "Descripccion",
+      text: `Tu foto debe cumplir con las siguientes especificaciones:
+      - Tamaño carné, fondo blanco y a colores.
+      - Formato JPG, tamaño mínimo 50 KB.
+      - Resolución 300 DPI (Es una unidad de medida para resoluciones de impresión).
+      - Tienes que enviarlo a las 48 horas después de inscribirte en la universidad.`,
+      class: ""
+    },
+    {
+      id: "adicionales",
+      title: "Adicionales",
+      text: "Cualquier observación será enviado a tu correo registrado e igualmente la fecha máxima para que sea cargado tu fotografía es el durante la primera semana de inicio de clases.",
+      class: "smallCard"
+    },
+    {
+      id: "para-el-asesor",
+      title: "Para el Asesor",
+      text: "",
+      class: "hideCard"
+    }
+  ];
+
+doctype html
+html(lang="es")
+  include ../includes/head.pug
+    
+    block title
+      title Registro de Fotografía Ingresante Enero/Marzo 2022 | UTP CENTER
+
+  body.grid
+    include ../includes/header.pug
+
+    main.main.grid-main
+      section.intro
+        h1.title Registro de Fotografía Ingresante Enero/Marzo 2022
+        for cardInfo in cardsInfo
+          .cardCopy(id=`${cardInfo.id}` class=`${cardInfo.class}`)
+            .cardCopy__head
+              h2= cardInfo.title
+              p.iconCopy
+                img(src="images/icon-copy.svg", alt="icon copy")
+            textarea(readonly="true" class="textCopy")= cardInfo.text
+
+    include ../includes/footer.pug
+
+    script(src="script/app.js") 
