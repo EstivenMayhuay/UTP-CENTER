@@ -2,15 +2,15 @@
   let cardsLink = [
     {
       text: "SAE en Linea",
-      link: "http://sae.link"
+      link: "https://saeutp.zendesk.com/hc/es"
     },
     {
       text: "CARMEN",
-      link: "http://carmen.link"
+      link: "https://carmen.utp.edu.pe/login"
     },
     {
       text: "Chattigo",
-      link: "http://chattigo.link"
+      link: "https://login.chattigo.com/pages/login"
     },
     {
       text: "P. Estudiante",
@@ -60,7 +60,7 @@ html(lang="es")
       section.content-cardsLink
         for cardLink of cardsLink
           .cardLink
-            a(href=`${cardLink.link}`)= cardLink.text
+            a(href=`${cardLink.link}` target="_blank")= cardLink.text
 
       section.intro
         h1.title Datos Generales
