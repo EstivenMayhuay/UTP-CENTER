@@ -1,0 +1,52 @@
+-
+  let cardsInfo = [
+    {
+      id: "saludo",
+      title: "Saludo",
+      text: "Hola (nombre del alumno), comentarte que actualmente no es posible postular a la beca Peru Champs debido a que culmino las fechas el dia 10 de agosto. Asimismo puedes verificar toda la informacion ingresando a: bit.ly/3ADiw7y",
+      class: "smallCard"
+    },
+    {
+      id: "descripccion",
+      title: "Descripccion",
+      text: "Peru Champs en convenio con la UTP ofrecen la Beca Peru Champs, beneficio dirigido a alumnos de Pregrado Regular y carreras para gente que trabaja (CGT) que presenten una necesidad económica familiar la cual debe de estar debidamente documentada según los requisitos. La beca asumirá entre 30% y 50% el costo de las cuotas de Agosto 2021 como resultado de la evaluación económica.",
+      class: "smallCard"
+    },
+    {
+      id: "adicionales",
+      title: "Adicionales",
+      text: "",
+      class: "hideCard"
+    },
+    {
+      id: "para-el-asesor",
+      title: "Para el Asesor",
+      text: "",
+      class: "hideCard"
+    }
+  ];
+
+doctype html
+html(lang="es")
+  include ../includes/head.pug
+    
+    block title
+      title Beca Peru Champ | UTP CENTER
+
+  body.grid
+    include ../includes/header.pug
+
+    main.main.grid-main
+      section.intro
+        h1.title Beca Peru Champ
+        for cardInfo in cardsInfo
+          .cardCopy(id=`${cardInfo.id}` class=`${cardInfo.class}`)
+            .cardCopy__head
+              h2= cardInfo.title
+              p.iconCopy
+                img(src="images/icon-copy.svg", alt="icon copy")
+            textarea(readonly="true" class="textCopy")= cardInfo.text
+
+    include ../includes/footer.pug
+
+    script(src="script/app.js") 

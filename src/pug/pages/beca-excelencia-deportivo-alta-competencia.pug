@@ -1,0 +1,52 @@
+-
+  let cardsInfo = [
+    {
+      id: "saludo",
+      title: "Saludo",
+      text: "Hola (nombre del alumno), comentarte que actualmente no es posible postular a esta beca debido a que culmino las fechas el dia 22 de julio. Asimismo puedes verificar toda la informacion ingresando a : bit.ly/ExceDepor-UTP",
+      class: "smallCard"
+    },
+    {
+      id: "descripccion",
+      title: "Descripccion",
+      text: "Beneficio dirigido a alumnos continuos de Pregrado Regular y CGT que sean deportistas destacados en representación  de la UTP en competencias deportivas locales, nacionales o internacionales, el porcentaje de descuento en las cuotas es de 25%.",
+      class: "smallCard"
+    },
+    {
+      id: "adicionales",
+      title: "Adicionales",
+      text: "",
+      class: "hideCard"
+    },
+    {
+      id: "para-el-asesor",
+      title: "Para el Asesor",
+      text: "",
+      class: "hideCard"
+    }
+  ];
+
+doctype html
+html(lang="es")
+  include ../includes/head.pug
+    
+    block title
+      title Beca Excelencia Deportivo Alta Competencia | UTP CENTER
+
+  body.grid
+    include ../includes/header.pug
+
+    main.main.grid-main
+      section.intro
+        h1.title Beca Excelencia Deportivo Alta Competencia
+        for cardInfo in cardsInfo
+          .cardCopy(id=`${cardInfo.id}` class=`${cardInfo.class}`)
+            .cardCopy__head
+              h2= cardInfo.title
+              p.iconCopy
+                img(src="images/icon-copy.svg", alt="icon copy")
+            textarea(readonly="true" class="textCopy")= cardInfo.text
+
+    include ../includes/footer.pug
+
+    script(src="script/app.js") 

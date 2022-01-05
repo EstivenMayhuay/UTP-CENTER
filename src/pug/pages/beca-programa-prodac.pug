@@ -1,0 +1,54 @@
+-
+  let cardsInfo = [
+    {
+      id: "saludo",
+      title: "Saludo",
+      text: "Hola (nombre del alumno), comentarte que actualmente no es posible postular a la beca Programa deportivo PRODAC debido a que culmino las fechas el dia 22 de Julio. Asimismo puedes verificar toda la informacion ingresando a: bit.ly/PRODAC-UTP",
+      class: "smallCard"
+    },
+    {
+      id: "descripccion",
+      title: "Descripccion",
+      text: `
+      1. Debe cumplir los requisitos académicos en el periodo regular anterior a la asignación del beneficio, de acuerdo con lo estipulado en el reglamento de Becas de pregrado el cual se encuentra publicado en el Portal del estudiante UTP.
+      2. Para renovar el beneficio debes presentar un nuevo expediente.`,
+      class: "smallCard"
+    },
+    {
+      id: "adicionales",
+      title: "Adicionales",
+      text: "",
+      class: "hideCard"
+    },
+    {
+      id: "para-el-asesor",
+      title: "Para el Asesor",
+      text: "",
+      class: "hideCard"
+    }
+  ];
+
+doctype html
+html(lang="es")
+  include ../includes/head.pug
+    
+    block title
+      title Beca Programa Dep. (Prodac) | UTP CENTER
+
+  body.grid
+    include ../includes/header.pug
+
+    main.main.grid-main
+      section.intro
+        h1.title Beca Programa Dep. (Prodac)
+        for cardInfo in cardsInfo
+          .cardCopy(id=`${cardInfo.id}` class=`${cardInfo.class}`)
+            .cardCopy__head
+              h2= cardInfo.title
+              p.iconCopy
+                img(src="images/icon-copy.svg", alt="icon copy")
+            textarea(readonly="true" class="textCopy")= cardInfo.text
+
+    include ../includes/footer.pug
+
+    script(src="script/app.js") 

@@ -1,0 +1,67 @@
+-
+  let cardsInfo = [
+    {
+      id: "saludo",
+      title: "Saludo",
+      text: "Hola (nombre del alumno), para solicitar la Beca Socioeconomica deberas seguir los siguientes pasos:",
+      class: "smallCard"
+    },
+    {
+      id: "descripccion",
+      title: "Descripccion",
+      text: `
+      1. Registra tu solicitud en el portal SAE para la activación del pago por derecho a trámite.
+      2. Ingresar una solicitud en Trámite a realizar : "Beca socioeconómica - Activación de pago por derecho a trámite".
+        - Te responderemos en 24 horas sobre confirmación de la activación del pago.
+      3. Realizar el pago en Bancos autorizados: Scotiabank, BBVA, BCP, Interbank.
+      4. Una vez cancelado el pago por derecho a trámite, ingresa una nueva solicitud en el portal SAE y selecciona el trámite:
+        - Becas Socioeconómica - Presentación del Expediente y completa la información con los datos requeridos en Becas y Descuentos por convenios, Beca Socioeconómica.
+
+      En la solicitud deberás adjuntar los siguientes documentos (escaneado legible):
+        - El voucher de pago por derecho a trámite.
+        - Ficha de Evaluación Socioeconómica debidamente completada y firmada.
+        - Adjunta los documentos sustentatorios de acuerdo a los requisitos.
+        - La respuesta final será remitida a tu correo UTP al término del proceso en curso.`,
+      class: ""
+    },
+    {
+      id: "adicionales",
+      title: "Adicionales",
+      text: `Ten en consideracion:
+      1. Debes cumplir los requisitos académicos en el periodo regular anterior a la asignación del beneficio, de acuerdo con lo estipulado en el reglamento de Becas de pregrado el cual se encuentra publicado en el Portal de estudiante.
+      2. Para renovar el beneficio debes presentar un nuevo expediente.
+      3. Los datos son estrictamente confidenciales. El resultado de la evaluación es de carácter inapelable.`,
+      class: ""
+    },
+    {
+      id: "para-el-asesor",
+      title: "Para el Asesor",
+      text: "",
+      class: "hideCard"
+    }
+  ];
+
+doctype html
+html(lang="es")
+  include ../includes/head.pug
+    
+    block title
+      title Beca Socioeconómica | UTP CENTER
+
+  body.grid
+    include ../includes/header.pug
+
+    main.main.grid-main
+      section.intro
+        h1.title Beca Socioeconómica
+        for cardInfo in cardsInfo
+          .cardCopy(id=`${cardInfo.id}` class=`${cardInfo.class}`)
+            .cardCopy__head
+              h2= cardInfo.title
+              p.iconCopy
+                img(src="images/icon-copy.svg", alt="icon copy")
+            textarea(readonly="true" class="textCopy")= cardInfo.text
+
+    include ../includes/footer.pug
+
+    script(src="script/app.js") 

@@ -1,0 +1,52 @@
+-
+  let cardsInfo = [
+    {
+      id: "saludo",
+      title: "Saludo",
+      text: "Hola (nombre del alumno), comentarte que actualmente no es posible postular a la beca Alto Potencial debido a que culmino las fechas el dia 6 Agosto. Asimismo puedes verificar toda la informacion ingresando a: https://bit.ly/2Zg9wY3",
+      class: "smallCard"
+    },
+    {
+      id: "descripccion",
+      title: "Descripccion",
+      text: "Beneficio dirigido a alumnos de 5to de secundaria provenientes de los colegios de Alto Rendimiento del Ministerio de Educación y/o del Programa Perú Champs del colegio Innova Schools. La convocatoria se realiza una vez al año. El porcentaje de descuento aplica en: las cuotas de estudios, gastos de admisión, matricula, carné, Programa de salud estudiantil y de ser necesario uniforme es de 100%.",
+      class: "smallCard"
+    },
+    {
+      id: "adicionales",
+      title: "Adicionales",
+      text: "",
+      class: "hideCard"
+    },
+    {
+      id: "para-el-asesor",
+      title: "Para el Asesor",
+      text: "",
+      class: "hideCard"
+    }
+  ];
+
+doctype html
+html(lang="es")
+  include ../includes/head.pug
+    
+    block title
+      title Beca Alto Potencial | UTP CENTER
+
+  body.grid
+    include ../includes/header.pug
+
+    main.main.grid-main
+      section.intro
+        h1.title Beca Alto Potencial
+        for cardInfo in cardsInfo
+          .cardCopy(id=`${cardInfo.id}` class=`${cardInfo.class}`)
+            .cardCopy__head
+              h2= cardInfo.title
+              p.iconCopy
+                img(src="images/icon-copy.svg", alt="icon copy")
+            textarea(readonly="true" class="textCopy")= cardInfo.text
+
+    include ../includes/footer.pug
+
+    script(src="script/app.js") 

@@ -1,0 +1,63 @@
+-
+  let cardsInfo = [
+    {
+      id: "saludo",
+      title: "Saludo",
+      text: "Hola (nombre del alumno), para solicitar la beca por Orfandad deberas seguir los siguientes pasos:",
+      class: "smallCard"
+    },
+    {
+      id: "descripccion",
+      title: "Descripccion",
+      text: `
+      1. Registra tu solicitud en el portal SAE para la activación del pago por derecho a trámite.
+        - Ingresar una solicitud en Trámite a realizar : "Beca por Orfandad/Discapacidad".
+        - Te responderemos en 24 horas sobre confirmación de la activación del pago.
+        - Realizar el pago en Bancos autorizados: Scotiabank, BBVA, BCP, Interbank.
+      2. Una vez cancelado el pago por derecho a trámite, ingresa una nueva solicitud en el portal SAE y completa los campos con los datos requeridos en Beca por Orfandad.
+      3. En la solicitud adjunta el expediente (escaneado legible):
+        - El voucher de pago por derecho a trámite.
+        - Ficha de Evaluación Socioeconómica debidamente completada y firmada.
+        - Adjunta los documentos sustentatorios de acuerdo a los requisitos.`,
+      class: ""
+    },
+    {
+      id: "adicionales",
+      title: "Adicionales",
+      text: `Ten en consideracion:
+      1. Debe cumplir los requisitos académicos en el periodo regular anterior a la asignación del beneficio, de acuerdo con lo estipulado en el reglamento de Becas de pregrado el cual se encuentra publicado en el Portal del estudiante UTP.
+      2. Para renovar el beneficio debes presentar un nuevo expediente.`,
+      class: ""
+    },
+    {
+      id: "para-el-asesor",
+      title: "Para el Asesor",
+      text: "",
+      class: "hideCard"
+    }
+  ];
+
+doctype html
+html(lang="es")
+  include ../includes/head.pug
+    
+    block title
+      title Beca por Orfandad | UTP CENTER
+
+  body.grid
+    include ../includes/header.pug
+
+    main.main.grid-main
+      section.intro
+        h1.title Beca por Orfandad
+        for cardInfo in cardsInfo
+          .cardCopy(id=`${cardInfo.id}` class=`${cardInfo.class}`)
+            .cardCopy__head
+              h2= cardInfo.title
+              p.iconCopy
+                img(src="images/icon-copy.svg", alt="icon copy")
+            textarea(readonly="true" class="textCopy")= cardInfo.text
+
+    include ../includes/footer.pug
+
+    script(src="script/app.js") 

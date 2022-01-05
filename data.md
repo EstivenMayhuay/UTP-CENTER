@@ -1358,7 +1358,7 @@
 #### **Adicionales**
 
 > Ten en consideracion
-
+>
 > 1. Debe cumplir los requisitos académicos en el periodo regular anterior a la asignación del beneficio, de acuerdo con lo estipulado en el reglamento de Becas de pregrado el cual se encuentra publicado en el Portal del estudiante UTP.
 > 2. Para renovar el beneficio debes presentar un nuevo expediente.
 
@@ -1491,8 +1491,7 @@
 > Aplica a estudiantes que cursen el 5° de secundaria y, además, a estudiantes con un año de egreso antes de la convocatoria anual que no formen parte de la UTP provenientes de los siguientes colegios y que hayan recibido una invitación de la UTP:
 >
 > - Colegios Innova Schools bajo el programa de Becas Perú Champs,
-> - Colegios de Alto Rendimiento del Ministerio de Educación y
-> - colegios seleccionados por el Comité de Empleabilidad de la UTP.
+> - Colegios de Alto Rendimiento del Ministerio de Educación y colegios seleccionados por el Comité de Empleabilidad de la UTP.
 
 <a id="id81"></a>
 

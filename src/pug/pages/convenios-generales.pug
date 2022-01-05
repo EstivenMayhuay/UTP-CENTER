@@ -1,0 +1,54 @@
+-
+  let cardsInfo = [
+    {
+      id: "saludo",
+      title: "Saludo",
+      text: "Hola (nombre del alumno), comentarte que actualmente no es posible postular a la Beca Talento debido a que culmino las fechas el dia 22 de Julio. Asimismo puedes verificar toda la informacion ingresando a: https:bit.ly/BecaTalento-UTP",
+      class: "smallCard"
+    },
+    {
+      id: "descripccion",
+      title: "Descripccion",
+      text: `Aplica a estudiantes que cursen el 5° de secundaria y, además, a estudiantes con un año de egreso antes de la convocatoria anual que no formen parte de la UTP provenientes de los siguientes colegios y que hayan recibido una invitación de la UTP:
+  - Colegios Innova Schools bajo el programa de Becas Perú Champs,
+  - Colegios de Alto Rendimiento del Ministerio de Educación y colegios seleccionados por el Comité de Empleabilidad de la UTP.`,
+      class: ""
+    },
+    {
+      id: "adicionales",
+      title: "Adicionales",
+      text: "",
+      class: "hideCard"
+    },
+    {
+      id: "para-el-asesor",
+      title: "Para el Asesor",
+      text: "",
+      class: "hideCard"
+    }
+  ];
+
+doctype html
+html(lang="es")
+  include ../includes/head.pug
+    
+    block title
+      title Convenios Generales | UTP CENTER
+
+  body.grid
+    include ../includes/header.pug
+
+    main.main.grid-main
+      section.intro
+        h1.title Convenios Generales
+        for cardInfo in cardsInfo
+          .cardCopy(id=`${cardInfo.id}` class=`${cardInfo.class}`)
+            .cardCopy__head
+              h2= cardInfo.title
+              p.iconCopy
+                img(src="images/icon-copy.svg", alt="icon copy")
+            textarea(readonly="true" class="textCopy")= cardInfo.text
+
+    include ../includes/footer.pug
+
+    script(src="script/app.js") 
