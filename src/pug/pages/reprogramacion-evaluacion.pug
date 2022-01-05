@@ -1,0 +1,52 @@
+-
+  let cardsInfo = [
+    {
+      id: "saludo",
+      title: "Saludo",
+      text: "Hola (nombre de alumno), sobre tu consulta te comento que debes ingresar una solicitud a través del Portal SAE en Línea bit.ly/Solicitud-SAE. Recuerda que debes completar todos los datos en la solicitud y esta debe ser ingresada de inmediato.",
+      class: "smallCard"
+    },
+    {
+      id: "descripccion",
+      title: "Descripccion",
+      text: 'En trámite a realizar elige "Reprogramación de evaluación", en la observación detalla el curso y la incidencia que presentaste. No olvides que debes adjuntar evidencia como sustento necesario para poder solicitar una reprogramación de tu examen.',
+      class: "smallCard"
+    },
+    {
+      id: "adicionales",
+      title: "Adicionales",
+      text: "Ten en cuenta que la solicitud será evaluada y que la respuesta será enviada al correo que ingreses en dicha solicitud.",
+      class: "smallCard"
+    },
+    {
+      id: "para-el-asesor",
+      title: "Para el Asesor",
+      text: "",
+      class: "hideCard"
+    }
+  ];
+
+doctype html
+html(lang="es")
+  include ../includes/head.pug
+    
+    block title
+      title Reprogramación de Evaluación | UTP CENTER
+
+  body.grid
+    include ../includes/header.pug
+
+    main.main.grid-main
+      section.intro
+        h1.title Reprogramación de Evaluación
+        for cardInfo in cardsInfo
+          .cardCopy(id=`${cardInfo.id}` class=`${cardInfo.class}`)
+            .cardCopy__head
+              h2= cardInfo.title
+              p.iconCopy
+                img(src="images/icon-copy.svg", alt="icon copy")
+            textarea(readonly="true" class="textCopy")= cardInfo.text
+
+    include ../includes/footer.pug
+
+    script(src="script/app.js") 

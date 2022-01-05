@@ -1,0 +1,62 @@
+-
+  let cardsInfo = [
+    {
+      id: "saludo",
+      title: "Saludo",
+      text: "Hola (nombre del alumno), para solicitar el reembolso los pasos son:",
+      class: "smallCard"
+    },
+    {
+      id: "descripccion",
+      title: "Descripccion",
+      text: `Pasos a seguir:
+    1. Registrar tu solicitud en “Portal SAE en Línea” completando los datos requeridos.
+    2. Adjuntar boleta o voucher de pago escaneado por el cual solicitas el reembolso.
+    3. Adjuntar tu documento de identidad escaneado
+    4. En el campo “Detalle de la solicitud” es importante que indiques el motivo del reembolso, así como, el tipo de reembolso que deseas:
+      - Reembolso en cuotas pendientes.
+      - Transferencia Bancaria, indicar el n° y tipo de cuenta bancaria, nombre del titular y DNI. (solo bancos autorizados: Interbank, Scotiabank, BBVA o BCP).
+      - En caso seas menor de edad adjunta el formato el cual podrás ubicar en el link: https://saeutp.zendesk.com/hc/es/articles/217919303
+      - En caso, se realice Transferencia a tercera persona adjunta el formato el cual podrás ubicar en el link: bit.ly/UTPreembolso.
+    5. Verificar en tu correo electrónico el número de ticket generado.`,
+      class: ""
+    },
+    {
+      id: "adicionales",
+      title: "Adicionales",
+      text: `Plazo de atención:
+    - Reembolso / transferencia bancaria: en 07 días hábiles posteriores al registro de tu solicitud.`,
+      class: "smallCard"
+    },
+    {
+      id: "para-el-asesor",
+      title: "Para el Asesor",
+      text: "",
+      class: "hideCard"
+    }
+  ];
+
+doctype html
+html(lang="es")
+  include ../includes/head.pug
+    
+    block title
+      title Reembolso | UTP CENTER
+
+  body.grid
+    include ../includes/header.pug
+
+    main.main.grid-main
+      section.intro
+        h1.title Reembolso
+        for cardInfo in cardsInfo
+          .cardCopy(id=`${cardInfo.id}` class=`${cardInfo.class}`)
+            .cardCopy__head
+              h2= cardInfo.title
+              p.iconCopy
+                img(src="images/icon-copy.svg", alt="icon copy")
+            textarea(readonly="true" class="textCopy")= cardInfo.text
+
+    include ../includes/footer.pug
+
+    script(src="script/app.js") 

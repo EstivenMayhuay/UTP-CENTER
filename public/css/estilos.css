@@ -46,7 +46,7 @@ body {
 .grid {
   display: grid;
   grid-template-columns: auto;
-  grid-template-rows: repeat(3, auto);
+  grid-template-rows: auto 2fr auto;
   background: var(--white-variant);
 }
 
@@ -214,6 +214,8 @@ body {
   display: flex;
   flex-flow: column;
   gap: 24px;
+  width: 100%;
+  height: auto;
   padding: 24px;
   background: var(--white-variant);
 }
@@ -295,7 +297,8 @@ textarea {
 
 /* Footer */
 .footer {
-  position: sticky;
+  /*position: sticky*/
+  position: relative;
   bottom: 0;
   left: 0;
   display: flex;

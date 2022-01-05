@@ -3,7 +3,7 @@
     {
       id: "saludo",
       title: "Saludo",
-      text: "Hola (nombre del alumno), para poder solicitar tu constancia de estudios, debes seguir estos pasos:",
+      text: "Hola (nombre del alumno), para poder solicitar tu constancia, debes seguir estos pasos:",
       class: "smallCard"
     },
     {
@@ -13,14 +13,25 @@
       1. Ingresa a tu portal del estudiante opción Trámites > Carga el pago de tus trámites > Trámite constancias varias y carga a tu cuenta el importe de S/22.00.
       2. Realiza el pago en los bancos autorizados (BBVA, SCOTIABANK, INTERBANK O BCP).
       3. Luego, ingresa al Portal SAE bit.ly/SolicitudSae y registrar tu solicitud, en la opción “Trámites a realizar” seleccionar Constancia de estudios.
-      4. Revisa tu correo con el número de ticket de la solicitud ingresada.`,
+      4. Revisa tu correo con el número de ticket de la solicitud ingresada.
+
+      El plazo de atención es de 3 días hábiles posteriores al registro y es muy importante que no tengas deuda en el periodo a solicitar.`,
       class: ""
     },
     {
       id: "adicionales",
       title: "Adicionales",
-      text: "El plazo de atención es de 3 días hábiles posteriores al registro y es muy importante que no tengas deuda en el periodo a solicitar. Solo pueden emitirse contancias desde el periodo 2016 -3 (Setiembre 2016) en adelante.",
-      class: "smallCard"
+      text: `Es válido para las siguientes constancias:
+      - Constancia de Ingreso (es gratuita si un ingresante la solicita por 1° vez durante el 1° ciclo).
+      - Constancia de Tercio/Quinto/Décimo superior.
+      - Constancia de Adeudo/No adeudo
+      - Constancia de separación/no separación académica
+      - Constancia de primera matrícula
+      - Constancia de promedio ponderado acumulado
+      - Constancia de pagos realizados
+
+      Solo pueden emitirse contancias desde el periodo 2016 -3 (Setiembre 2016) en adelante. En el detalle de la solicitud debes indicar qué tipo de constancia requieres tramitar.`,
+      class: ""
     },
     {
       id: "para-el-asesor",
@@ -35,14 +46,14 @@ html(lang="es")
   include ../includes/head.pug
     
     block title
-      title Constancia de Estudios | UTP CENTER
+      title Otras Constancias | UTP CENTER
 
   body.grid
     include ../includes/header.pug
 
     main.main.grid-main
       section.intro
-        h1.title Constancia de Estudios
+        h1.title Otras Constancias
         for cardInfo in cardsInfo
           .cardCopy(id=`${cardInfo.id}` class=`${cardInfo.class}`)
             .cardCopy__head

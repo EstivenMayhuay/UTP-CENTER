@@ -1,0 +1,63 @@
+-
+  let cardsInfo = [
+    {
+      id: "saludo",
+      title: "Saludo",
+      text: "Hola (nombre del alumno), para solicitar la autenticación de sílabos los pasos son:",
+      class: "smallCard"
+    },
+    {
+      id: "descripccion",
+      title: "Descripccion",
+      text: `
+      1. Realiza el pago en los bancos autorizados. (Solicitar la activación del pago a SAE)
+      2. El costo es de S/20 por sílabo para trámite nacional y S/22 por sílabo para trámite en el extranjero.
+      3. Registra tu solicitud en “Portal SAE en Línea” completando los datos requeridos. En el campo “Detalle de la solicitud” es importante que coloques los siguientes datos:
+        - El nombre del curso o cursos que deseas solicitar.
+        - Si el trámite es para uso nacional o extranjero.
+      4. Verificas en tu correo electrónico el número de ticket generado.
+        - El plazo de atención es de 10 días hábiles.`,
+      class: ""
+    },
+    {
+      id: "adicionales",
+      title: "Adicionales",
+      text: `Ten en cuenta que:
+      1. Es requisito para la autenticación, no presentar deuda en el período lectivo por el cual solicitas el mismo. Si lo tuvieras, podemos brindarte solo por los períodos anteriores.
+      2. Sólo se emiten sílabos de cursos aprobados en UTP.
+      3. La conformidad u observaciones, así como la fecha y lugar de recojo de tu sílabo será enviado a tu correo electrónico dentro del plazo establecido.
+      4. Se emite un sílabo por cada curso`,
+      class: ""
+    },
+    {
+      id: "para-el-asesor",
+      title: "Para el Asesor",
+      text: "",
+      class: "hideCard"
+    }
+  ];
+
+doctype html
+html(lang="es")
+  include ../includes/head.pug
+    
+    block title
+      title Autenticación de Sílabus | UTP CENTER
+
+  body.grid
+    include ../includes/header.pug
+
+    main.main.grid-main
+      section.intro
+        h1.title Autenticación de Sílabus
+        for cardInfo in cardsInfo
+          .cardCopy(id=`${cardInfo.id}` class=`${cardInfo.class}`)
+            .cardCopy__head
+              h2= cardInfo.title
+              p.iconCopy
+                img(src="images/icon-copy.svg", alt="icon copy")
+            textarea(readonly="true" class="textCopy")= cardInfo.text
+
+    include ../includes/footer.pug
+
+    script(src="script/app.js") 

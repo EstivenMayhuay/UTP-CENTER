@@ -1,0 +1,58 @@
+-
+  let cardsInfo = [
+    {
+      id: "saludo",
+      title: "Saludo",
+      text: "",
+      class: "hideCard"
+    },
+    {
+      id: "descripccion",
+      title: "Descripccion",
+      text: `
+    - Emitido: Hola (nombre del alumno) para recoger tu carné debes acercarte a tu sede en el horario de 7:00 am a 1:00pm y de 2:00pm a 6:00 pm (lunes a viernes). Si en caso perteneces a la sede Lima Centro deberás acercarte a Natalio Sanchez 125 (alt. crda. 7 de av. Arequipa, frente al parque Washington).
+
+    - Delivery: Se comunicarán al número de contacto que registraste en tu solicitud para coordinar la entrega, manténte atento por favor`,
+      class: ""
+    },
+    {
+      id: "adicionales",
+      title: "Adicionales",
+      text: `Debes Validar que el carné de alumno ya se encuentre emitido, para ello filtra el código de alumno en las siguientes bases del Info SAE:
+    - ✅Primer reporte de entregas de carné universitarios 2021: bit.ly/3lqvGPC
+    - ✅Lista de carnés emitidos (Sexto pedido): bit.ly/3dgCpai
+    - ✅LISTADO CARNÉ - SÉPTIMO PEDIDO: bit.ly/3xP4PSn`,
+      class: ""
+    },
+    {
+      id: "para-el-asesor",
+      title: "Para el Asesor",
+      text: "",
+      class: "hideCard"
+    }
+  ];
+
+doctype html
+html(lang="es")
+  include ../includes/head.pug
+    
+    block title
+      title Emisión Carné Universitario | UTP CENTER
+
+  body.grid
+    include ../includes/header.pug
+
+    main.main.grid-main
+      section.intro
+        h1.title Emisión Carné Universitario
+        for cardInfo in cardsInfo
+          .cardCopy(id=`${cardInfo.id}` class=`${cardInfo.class}`)
+            .cardCopy__head
+              h2= cardInfo.title
+              p.iconCopy
+                img(src="images/icon-copy.svg", alt="icon copy")
+            textarea(readonly="true" class="textCopy")= cardInfo.text
+
+    include ../includes/footer.pug
+
+    script(src="script/app.js") 
