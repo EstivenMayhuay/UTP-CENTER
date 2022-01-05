@@ -1,0 +1,68 @@
+-
+  let cardsInfo = [
+    {
+      id: "saludo",
+      title: "Saludo",
+      text: `
+      Hola (nombre del alumno), te comento que ya tenemos disponibles las fechas para el proceso de convalidación de inglés:
+      La universidad ha establecido dos formas para solicitar la exoneración del curso de Inglés.
+      Ahora podrás ingresar tu solicitud desde el Portal de SAE en Línea desde el 20 de setiembre al 4 de octubre.`,
+      class: ""
+    },
+    {
+      id: "descripccion",
+      title: "Descripccion",
+      text: `Modalidades para la convalidación:
+      a) Presentación de un certificado de estudio o examen Internacional.
+        - Al ingresar al formulario escoge el trámite "CONVALIDACIÓN DE INGLÉS - PRESENTACIÓN DE CERTIFICADO"
+        - Adjunta tu certificado de Inglés de nivel básico completo (A2: Nivel básico certificado) o examen internacional.
+        - El documento debe ser legible y en formato PDF.
+        - Revisa aquí las equivalencias con instituciones aceptadas por UTP y exámenes internacionales.
+        
+      b) Rendir la prueba de definición del nivel de inglés.
+        - Solicita el cargo para la prueba de definición de inglés (S/ 33.00), a través de nuestro canal WhatsApp SAE 960252970 (Horario de atención: Lunes a Viernes de 7am. - 10pm. Sábado y Domingo de 7am. - 8pm).
+        - Realiza el pago y adjunta el voucher a tu solicitud. Al ingresar al formulario escoge el trámite CONVALIDACIÓN DE INGLÉS - PRUEBA DE DEFINICIÓN.
+        - Recibirás la confirmación con la fecha del examen a través del correo registrado en tu solicitud, en un máximo de 3 días hábiles.`,
+      class: ""
+    },
+    {
+      id: "adicionales",
+      title: "Adicionales",
+      text: `
+      - Serás programado para rendir tu examen de definición de inglés entre el 11 y 13 de octubre.
+      - Es importante que te conectes 5 minutos antes a través del link que se te enviará por correo y recuerda prender tu cámara y microfono durante la evaluación.
+      - Resultados de la convalidación: La respuesta te llegará a través del correo registrado en tu solicitud en un plazo máximo de 15 días útiles.`,
+      class: ""
+    },
+    {
+      id: "para-el-asesor",
+      title: "Para el Asesor",
+      text: "",
+      class: "hideCard"
+    }
+  ];
+
+doctype html
+html(lang="es")
+  include ../includes/head.pug
+    
+    block title
+      title Retiro de Periodo Lectivo | UTP CENTER
+
+  body.grid
+    include ../includes/header.pug
+
+    main.main.grid-main
+      section.intro
+        h1.title Retiro de Periodo Lectivo
+        for cardInfo in cardsInfo
+          .cardCopy(id=`${cardInfo.id}` class=`${cardInfo.class}`)
+            .cardCopy__head
+              h2= cardInfo.title
+              p.iconCopy
+                img(src="images/icon-copy.svg", alt="icon copy")
+            textarea(readonly="true" class="textCopy")= cardInfo.text
+
+    include ../includes/footer.pug
+
+    script(src="script/app.js") 

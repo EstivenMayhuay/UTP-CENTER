@@ -1,0 +1,57 @@
+-
+  let cardsInfo = [
+    {
+      id: "saludo",
+      title: "Saludo",
+      text: "Hola (nombre del alumno), para poder solicitar tu certificado de estudios, debes seguir estos pasos:",
+      class: "smallCard"
+    },
+    {
+      id: "descripccion",
+      title: "Descripccion",
+      text: `
+      1. Ingresa a tu Portal del estudiante, opción “Trámites / Carga el pago de tus trámites/ Trámite de Certificado de Estudios” y cárga a tu cuenta el importe de S/25.00.
+      2. Realiza el pago en los bancos autorizados. (BBVA, SCOTIABANK, INTERBANK O BCP).
+      3. Luego, ingresa a la página web SAE en línea bit.ly/SolicitudSae y registra tu solicitud, en la opción “trámites a realizar” seleccionar Certificado de estudios .
+      4. Adjunta tu fotografia la cual debe cumplir los requisitos detallados en el siguiente enlace: bit.ly/CertificadoEstudios
+      5. Revisa tu correo con el número de ticket de la solicitud ingresada`,
+      class: ""
+    },
+    {
+      id: "adicionales",
+      title: "Adicionales",
+      text: "El plazo de atención es de 7 a 10 días hábiles y es muy importante que no tengas deuda en el periodo a solicitar. Solo pueden emitirse certificados desde el periodo 2016 -3 (Setiembre 2016) en adelante.",
+      class: "smallCard"
+    },
+    {
+      id: "para-el-asesor",
+      title: "Para el Asesor",
+      text: "",
+      class: "hideCard"
+    }
+  ];
+
+doctype html
+html(lang="es")
+  include ../includes/head.pug
+    
+    block title
+      title  Certificado de Estudios | UTP CENTER
+
+  body.grid
+    include ../includes/header.pug
+
+    main.main.grid-main
+      section.intro
+        h1.title Certificado de Estudios
+        for cardInfo in cardsInfo
+          .cardCopy(id=`${cardInfo.id}` class=`${cardInfo.class}`)
+            .cardCopy__head
+              h2= cardInfo.title
+              p.iconCopy
+                img(src="images/icon-copy.svg", alt="icon copy")
+            textarea(readonly="true" class="textCopy")= cardInfo.text
+
+    include ../includes/footer.pug
+
+    script(src="script/app.js") 

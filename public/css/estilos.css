@@ -39,7 +39,7 @@
 body {
   display: block;
   max-width: 100%;
-  min-height: 100%;
+  min-height: 100vh;
 }
 
 .grid {
@@ -67,8 +67,8 @@ body {
 /* Header */
 .header {
   position: relative;
-  position: sticky;
-  top: 0;
+  /*position: sticky;
+  top: 0;*/
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
@@ -226,7 +226,7 @@ body {
 }
 
 .smallCard {
-  --hCardCopy: 100px,
+  --hCardCopy: 140px;
 }
 
 .hideCard {

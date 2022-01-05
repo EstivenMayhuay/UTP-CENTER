@@ -1,0 +1,62 @@
+-
+  let cardsInfo = [
+    {
+      id: "saludo",
+      title: "Saludo",
+      text: "Hola (nombre del alumno), para solicitar factura debes:",
+      class: "smallCard"
+    },
+    {
+      id: "descripccion",
+      title: "Descripccion",
+      text: `
+      1. Realizar la transferencia en el Banco de Crédito del Perú:
+        - Moneda: Soles
+        - Número de cuenta: 193-2304436-030 o CCI: 002-193-002304436-0-30-15
+
+      Luego de realizar el depósito:
+
+      2. Registra tu solicitud en el Portal SAE en Línea (bit.ly/Solicitud-SAE) especificando la razón social y ruc de la empresa, correo de la persona de contacto en la empresa, cuota(s) que se va a facturar y carta de compromiso de la empresa y alumno en caso corresponda.
+      3. Al solicitar factura, las cuotas no están afectas al descuento de pronto pago ni del ciclo al contado.
+      4. No puedes solicitar factura por cuotas vencidas. Ingresa al siguiente link para revisar el calendario para solicitar factura y mayor detalle: bit.ly/EmisiónFactura
+      5. El plazo de atención es de 7 días hábiles.`,
+      class: ""
+    },
+    {
+      id: "adicionales",
+      title: "Adicionales",
+      text: "",
+      class: "hideCard"
+    },
+    {
+      id: "para-el-asesor",
+      title: "Para el Asesor",
+      text: "",
+      class: "hideCard"
+    }
+  ];
+
+doctype html
+html(lang="es")
+  include ../includes/head.pug
+    
+    block title
+      title Factura Electrónica | UTP CENTER
+
+  body.grid
+    include ../includes/header.pug
+
+    main.main.grid-main
+      section.intro
+        h1.title Factura Electrónica
+        for cardInfo in cardsInfo
+          .cardCopy(id=`${cardInfo.id}` class=`${cardInfo.class}`)
+            .cardCopy__head
+              h2= cardInfo.title
+              p.iconCopy
+                img(src="images/icon-copy.svg", alt="icon copy")
+            textarea(readonly="true" class="textCopy")= cardInfo.text
+
+    include ../includes/footer.pug
+
+    script(src="script/app.js") 

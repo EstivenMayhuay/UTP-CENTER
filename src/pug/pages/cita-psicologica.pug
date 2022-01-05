@@ -1,0 +1,62 @@
+-
+  let cardsInfo = [
+    {
+      id: "saludo",
+      title: "Saludo",
+      text: "Hola (nombre del alumno), para solicitar una cita psicológica los pasos son:",
+      class: "smallCard"
+    },
+    {
+      id: "descripccion",
+      title: "Descripccion",
+      text: `
+      1. Registra tu solicitud en Portal SAE en Línea completando los datos requeridos. En Trámite a realizar seleccionar Solicitud cita psicológica. En Detalle de solicitud es importante que indiques los días y horarios en los que prefieras programar la cita tomando en consideración los siguientes horarios: Lunes a Viernes de 08:00hrs – 20:00hrs / sábados: 08:00hrs - 17:00hrs.
+      2. Verifica en tu correo electrónico el número de ticket generado.
+
+      Dato: Al día hábil siguiente enviaremos a tu correo electrónico las opciones de horarios de atención disponibles.
+      También puedes solicitar la cita llenando el siguiente formulario: https://bit.ly/citaspsicoagosto21`,
+      class: ""
+    },
+    {
+      id: "adicionales",
+      title: "Adicionales",
+      text: `Ten en cuenta que:
+      1. Tienes que estar matriculado en el periodo lectivo actual, el servicio es gratuito.
+      2. De no ser el alumno quién lo solicite, puede ser padre o apoderado de un alumno matriculado en el periodo lectivo actual, siempre y cuando la problemática sea alusiva al alumno.
+      3. Te enviaremos la confirmación de la cita: fecha, hora, lugar y el nombre de la persona que te atenderá.
+      4. Organízate para que te conectes puntualmente a tu cita caso contrario la cita será reprogramada.
+      5. La duración es de 30 minutos.`,
+      class: ""
+    },
+    {
+      id: "para-el-asesor",
+      title: "Para el Asesor",
+      text: "",
+      class: "hideCard"
+    }
+  ];
+
+doctype html
+html(lang="es")
+  include ../includes/head.pug
+    
+    block title
+      title Cita Psicológica | UTP CENTER
+
+  body.grid
+    include ../includes/header.pug
+
+    main.main.grid-main
+      section.intro
+        h1.title Cita Psicológica
+        for cardInfo in cardsInfo
+          .cardCopy(id=`${cardInfo.id}` class=`${cardInfo.class}`)
+            .cardCopy__head
+              h2= cardInfo.title
+              p.iconCopy
+                img(src="images/icon-copy.svg", alt="icon copy")
+            textarea(readonly="true" class="textCopy")= cardInfo.text
+
+    include ../includes/footer.pug
+
+    script(src="script/app.js") 

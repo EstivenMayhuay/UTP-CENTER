@@ -1,0 +1,62 @@
+-
+  let cardsInfo = [
+    {
+      id: "saludo",
+      title: "Saludo",
+      text: `
+    ¿A qué carrera deseas cambiarte?
+    ¿A qué campus deseas cambiarte?`,
+      class: "smallCard"
+    },
+    {
+      id: "descripccion",
+      title: "Descripccion",
+      text: `
+      - Para solicitar tu cambio de "x" primero debes cargar por tu Portal del estudiante opción Trámites el pago de S/165.00 soles, podrás cancelar a través de los bancos autorizados.
+      - Luego ingresa una solicitud mediante el Portal SAE (bit.ly/SolicitudSae) adjuntando el voucher del pago realizado y en la opción Trámite a realizar seleccionarás el cambio que deseas realizar.
+      - La fecha límite para poder solicitar el cambio es hasta el 19 de noviembre.
+      - Por último, la respuesta se te brindará en un plazo máximo de 7 días hábiles posteriores al correo que registres en la solicitud.`,
+      class: ""
+    },
+    {
+      id: "adicionales",
+      title: "Adicionales",
+      text: `Ten en cuenta que debes cumplir con los siguientes:
+      - Estar al día en el pago de tus cuotas
+      - No debes estar suspendido por sanción disciplinaria.
+      - Encontrarte matriculado en el presente período académico
+      - No olvides detallar a qué sede/carrera deseas cambiar y que será efectivo a partir del siguiente ciclo.`,
+      class: ""
+    },
+    {
+      id: "para-el-asesor",
+      title: "Para el Asesor",
+      text: "Asesor debe validar que la carrera esté habilitada en la sede a cambiar, así como el ciclo en curso, verificarlo en excel (Ciclo máximo por carrera) en Info Sae",
+      class: "smallCard"
+    }
+  ];
+
+doctype html
+html(lang="es")
+  include ../includes/head.pug
+    
+    block title
+      title Cambio de Carrera Reinscrito | UTP CENTER
+
+  body.grid
+    include ../includes/header.pug
+
+    main.main.grid-main
+      section.intro
+        h1.title Cambio de Carrera Reinscrito
+        for cardInfo in cardsInfo
+          .cardCopy(id=`${cardInfo.id}` class=`${cardInfo.class}`)
+            .cardCopy__head
+              h2= cardInfo.title
+              p.iconCopy
+                img(src="images/icon-copy.svg", alt="icon copy")
+            textarea(readonly="true" class="textCopy")= cardInfo.text
+
+    include ../includes/footer.pug
+
+    script(src="script/app.js") 
