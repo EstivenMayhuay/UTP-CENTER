@@ -1447,7 +1447,7 @@
 
 #### **Saludo**
 
-> Hola (nombre del alumno), para solicitar la Beca Socioeconomica deberas seguir los siguientes pasos:>
+> Hola (nombre del alumno), para solicitar la Beca Socioeconomica deberas seguir los siguientes pasos:
 
 #### **Descripcción**
 
