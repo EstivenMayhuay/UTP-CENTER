@@ -1,0 +1,62 @@
+-
+  let cardsInfo = [
+    {
+      id: "saludo",
+      title: "Saludo",
+      text: "Hola (nombre del alumno), para solicitar la rectificación de nota los pasos son:",
+      class: "smallCard"
+    },
+    {
+      id: "descripccion",
+      title: "Descripccion",
+      text: `
+      1. Registrar tu solicitud en nuestro Portal de Admisión (admision.utp.edu.pe).
+      2. En el campo "Detalle Solicitud", indica el motivo detallado por el cual estás presentando la solicitud, así como indicar el nombre completo del docente, curso y sección.
+      3. Enviar adjunto a tu solicitud la evaluación por la cual estás presentando la rectificación.
+      4. Después de registrar tu solicitud, recibirás un correo de confirmación con el número de ticket generado.
+      5. Tu solicitud será atendida dentro de los dos siete días hábiles posteriores a su registro.
+      6. La respuesta a tu solicitud será enviada al correo que registraste en el formulario.`,
+      class: ""
+    },
+    {
+      id: "adicionales",
+      title: "Adicionales",
+      text: `Solo se puede solicitar rectificación:
+    - Si existe error en la suma del puntaje.
+    - Si la nota no concuerda con la registrada en tu portal.
+    - Si existe una pregunta no calificada.
+    - Puedes presentarla hasta la semana previa a los exámenes finales.`,
+      class: ""
+    },
+    {
+      id: "para-el-asesor",
+      title: "Para el Asesor",
+      text: "",
+      class: "hideCard"
+    }
+  ];
+
+doctype html
+html(lang="es")
+  include ../includes/head.pug
+    
+    block title
+      title Rectificación de Notas PAU | UTP CENTER
+
+  body.grid
+    include ../includes/header.pug
+
+    main.main.grid-main
+      section.intro
+        h1.title Rectificación de Notas PAU
+        for cardInfo in cardsInfo
+          .cardCopy(id=`${cardInfo.id}` class=`${cardInfo.class}`)
+            .cardCopy__head
+              h2= cardInfo.title
+              p.iconCopy
+                img(src="images/icon-copy.svg", alt="icon copy")
+            textarea(readonly="true" class="textCopy")= cardInfo.text
+
+    include ../includes/footer.pug
+
+    script(src="script/app.js") 

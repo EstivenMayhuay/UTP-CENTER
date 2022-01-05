@@ -1,0 +1,58 @@
+-
+  let cardsInfo = [
+    {
+      id: "saludo",
+      title: "Saludo",
+      text: "Hola (nombre del alumno), para solicitar la ampliación del plazo de vigencia te sugerimos no aguardar el último día de espera para realizar este proceso, los pasos para requerirlo son:",
+      class: "smallCard"
+    },
+    {
+      id: "descripccion",
+      title: "Descripccion",
+      text: `
+      1. Genera un ticket a través del SAE en Línea: https://saeutp.zendesk.com/hc/es , escoger en Trámite a realizar la opción       Aprobación / ampliación plan tesis o trabajo suficiencia profesional.
+      2. Completa en su totalidad la solicitud de ampliación de tesis o trabajo de suficiencia profesional y adjuntarla al ticket.
+      3. Si tu trabajo de titulación es grupal, es suficiente que uno de los integrantes inicie este trámite.
+      4. La solicitud debe llevar la firma de tu asesor y de todos los integrantes.`,
+      class: ""
+    },
+    {
+      id: "adicionales",
+      title: "Adicionales",
+      text: `Ten en consideración:
+      - Una vez que realices el trámite, Grados y Títulos validará la información que presentes. De estar conforme, solicitaremos el V°B° del Director de Carrera. En caso exista una observación, te comunicaremos a través del ticket generado.
+      - El plazo de atención de este trámite es de 4 días hábiles, para mayor información ingresa a: bit.ly/ampliaciontesis`,
+      class: ""
+    },
+    {
+      id: "para-el-asesor",
+      title: "Para el Asesor",
+      text: "",
+      class: "hideCard"
+    }
+  ];
+
+doctype html
+html(lang="es")
+  include ../includes/head.pug
+    
+    block title
+      title Ampliación del Plazo de Vigencia | UTP CENTER
+
+  body.grid
+    include ../includes/header.pug
+
+    main.main.grid-main
+      section.intro
+        h1.title Ampliación del Plazo de Vigencia
+        for cardInfo in cardsInfo
+          .cardCopy(id=`${cardInfo.id}` class=`${cardInfo.class}`)
+            .cardCopy__head
+              h2= cardInfo.title
+              p.iconCopy
+                img(src="images/icon-copy.svg", alt="icon copy")
+            textarea(readonly="true" class="textCopy")= cardInfo.text
+
+    include ../includes/footer.pug
+
+    script(src="script/app.js") 

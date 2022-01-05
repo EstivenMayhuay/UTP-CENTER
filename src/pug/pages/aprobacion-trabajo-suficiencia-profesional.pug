@@ -1,0 +1,57 @@
+-
+  let cardsInfo = [
+    {
+      id: "saludo",
+      title: "Saludo",
+      text: "Hola (nombre del alumno), para solicitar la aprobación del trabajo de suficiencia profesional por favor sigue estos pasos:",
+      class: "smallCard"
+    },
+    {
+      id: "descripccion",
+      title: "Descripccion",
+      text: `
+      1. Realiza el pago de S/320 en cualquiera de nuestros bancos autorizados: Interbank, Scotiabank, BCP y BBVA Continental.
+      2. Una vez cancelado el trámite, deberás generar un ticket a través de SAE en Línea y escoger en "Trámite a realizar" la opción "Aprobación/ Ampliación plan tesis o trabajo suficiencia profesional".
+      3. Completa la solicitud de aprobación del tema de tesis o trabajo de suficiencia profesional> y adjuntarla al ticket.`,
+      class: "smallCard"
+    },
+    {
+      id: "adicionales",
+      title: "Adicionales",
+      text: `
+      - El plazo de atención es de 20 días hábiles.
+      - Para mayor información acerca de los documentos por adjuntar accede a: bit.ly/TrabSuficienciaProf`,
+      class: "smallCard"
+    },
+    {
+      id: "para-el-asesor",
+      title: "Para el Asesor",
+      text: "",
+      class: "hideCard"
+    }
+  ];
+
+doctype html
+html(lang="es")
+  include ../includes/head.pug
+    
+    block title
+      title Aprobación del Trabajo de Suficiencia Profesional | UTP CENTER
+
+  body.grid
+    include ../includes/header.pug
+
+    main.main.grid-main
+      section.intro
+        h1.title Aprobación del Trabajo de Suficiencia Profesional
+        for cardInfo in cardsInfo
+          .cardCopy(id=`${cardInfo.id}` class=`${cardInfo.class}`)
+            .cardCopy__head
+              h2= cardInfo.title
+              p.iconCopy
+                img(src="images/icon-copy.svg", alt="icon copy")
+            textarea(readonly="true" class="textCopy")= cardInfo.text
+
+    include ../includes/footer.pug
+
+    script(src="script/app.js") 

@@ -1,0 +1,58 @@
+-
+  let cardsInfo = [
+    {
+      id: "saludo",
+      title: "Saludo",
+      text: "Hola (nombre del alumno), para solicitar el retiro del ciclo los pasos son:",
+      class: "smallCard"
+    },
+    {
+      id: "descripccion",
+      title: "Descripccion",
+      text: `
+      1. Registrar tu solicitud en nuestro Portal de Admisión (admision.utp.edu.pe).
+      2. Realiza la solicitud dentro de las fechas detalladas en el Calendario de Actividades del Programa de Avance Universitario - PAU.
+      3. En la descripción de solicitud escribe Retiro de ciclo.
+      4. Después de registrar tu solicitud, recibirás un correo de confirmación con el número de ticket generado.
+      5. Tu solicitud será atendida dentro de los dos días hábiles posteriores a su registro.
+      6. La respuesta a tu solicitud será enviada al correo que registraste en el formulario.`,
+      class: ""
+    },
+    {
+      id: "adicionales",
+      title: "Adicionales",
+      text: "Dato: Lo puedes solicitar hasta el último día de clases, no tiene costo",
+      class: "smallCard"
+    },
+    {
+      id: "para-el-asesor",
+      title: "Para el Asesor",
+      text: "",
+      class: "hideCard"
+    }
+  ];
+
+doctype html
+html(lang="es")
+  include ../includes/head.pug
+    
+    block title
+      title Retiro de Periodo (PAU) | UTP CENTER
+
+  body.grid
+    include ../includes/header.pug
+
+    main.main.grid-main
+      section.intro
+        h1.title Retiro de Periodo (PAU)
+        for cardInfo in cardsInfo
+          .cardCopy(id=`${cardInfo.id}` class=`${cardInfo.class}`)
+            .cardCopy__head
+              h2= cardInfo.title
+              p.iconCopy
+                img(src="images/icon-copy.svg", alt="icon copy")
+            textarea(readonly="true" class="textCopy")= cardInfo.text
+
+    include ../includes/footer.pug
+
+    script(src="script/app.js") 

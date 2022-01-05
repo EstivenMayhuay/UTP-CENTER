@@ -1,0 +1,70 @@
+-
+  let cardsInfo = [
+    {
+      id: "saludo",
+      title: "Saludo",
+      text: "Hola (nombre del alumno), para solicitar el reembolso los pasos son:",
+      class: "smallCard"
+    },
+    {
+      id: "descripccion",
+      title: "Descripccion",
+      text: `
+      1. Registrar tu solicitud en el "Portal de Admisión" completando los datos requeridos.
+      2. Adjuntar boleta o voucher de pago escaneado por el cual solicitas el reembolso.
+      3. Adjuntar tu documento de identidad escaneado.
+      4. En el campo "Detalle de solicitud" es importante que indique el motivo del reembolso, así como, el tipo de reembolso que deseas:
+      
+    Transferencia bancaria, indicando el número y tipo de cuenta a realizar el depósito y nombre del titular.
+    En caso fuera un tercero, debes adjuntar la siguiente información:
+
+      - Carta de autorización de Transferencia (ubica el formato en: https://bit.ly/3o35Q6B)
+      - Copia del DNI del alumno de UTP.
+      - Copia de DNI del beneficiario de la transferencia bancaria.
+      - Copia del sustento que sustente el número de la Cuenta Bancaria (Efectivo - Cheque)
+
+      5. Verifica en tu correo electrónico el número de ticket generado.
+        - Transferencia bancaria: en 07 días hábiles posteriores al registro de tu solicitud.
+        - Efectivo - Cheque: en 21 días hábiles posteriores al registro de tu solicitud.`,
+      class: ""
+    },
+    {
+      id: "adicionales",
+      title: "Adicionales",
+      text: `Ten en cuenta que:
+  - Para conocer las políticas de la universidad sobre reembolso, puedes consultar la sección de Disposiciones Finales de nuestra Guía del Estudiante.
+  - La conformidad u observaciones a tu trámite serán enviadas a tu correo electrónico dentro de los plazos establecidos.`,
+      class: ""
+    },
+    {
+      id: "para-el-asesor",
+      title: "Para el Asesor",
+      text: "",
+      class: "hideCard"
+    }
+  ];
+
+doctype html
+html(lang="es")
+  include ../includes/head.pug
+    
+    block title
+      title Reembolso | UTP CENTER
+
+  body.grid
+    include ../includes/header.pug
+
+    main.main.grid-main
+      section.intro
+        h1.title Reembolso
+        for cardInfo in cardsInfo
+          .cardCopy(id=`${cardInfo.id}` class=`${cardInfo.class}`)
+            .cardCopy__head
+              h2= cardInfo.title
+              p.iconCopy
+                img(src="images/icon-copy.svg", alt="icon copy")
+            textarea(readonly="true" class="textCopy")= cardInfo.text
+
+    include ../includes/footer.pug
+
+    script(src="script/app.js") 

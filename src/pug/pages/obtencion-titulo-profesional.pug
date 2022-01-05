@@ -1,0 +1,60 @@
+-
+  let cardsInfo = [
+    {
+      id: "saludo",
+      title: "Saludo",
+      text: "Hola (nombre del alumno), el costo del trámite es de S/1300 para solicitarlo considera lo siguiente:",
+      class: "smallCard"
+    },
+    {
+      id: "descripccion",
+      title: "Descripccion",
+      text: `
+      1. Aprobar una de las modalidades de titulación que figuran en el Reglamento de Grados y Títulos.
+      2. No tener deudas con la Universidad.
+      3. Una vez cancelado el trámite, debes generar un ticket a través del SAE en Línea y escoger en "Trámite a realizar" la opción "Diploma de Grado de Bachiller/Título profesional", adjuntando lo indicado en “Documentos”.
+      4. Completa la solicitud de grados y títulos, debes adjuntarla al ticket. Recuerda consignar tus datos conforme al DNI.
+      5. Verifica y detecta el procedimiento del Reporte “Turnitin” indicado por tu asesor.
+      6. Si realizaste el trabajo en grupo, la generación del ticket es individual y el procedimiento “Documentos” de la misma manera.`,
+      class: ""
+    },
+    {
+      id: "adicionales",
+      title: "Adicionales",
+      text: `El plazo máximo es de 50 días hábiles, asimismo verifica la información del procedimiento y documentos por adjuntar según corresponda en:
+      - Modalidad de tesis: bit.ly/titulotesis
+      - Modalidad de trabajo de suficiencia profesional: bit.ly/titulotrabsuficiencia`,
+      class: "smallCard"
+    },
+    {
+      id: "para-el-asesor",
+      title: "Para el Asesor",
+      text: "",
+      class: "hideCard"
+    }
+  ];
+
+doctype html
+html(lang="es")
+  include ../includes/head.pug
+    
+    block title
+      title Obtención del Título Profesional | UTP CENTER
+
+  body.grid
+    include ../includes/header.pug
+
+    main.main.grid-main
+      section.intro
+        h1.title Obtención del Título Profesional
+        for cardInfo in cardsInfo
+          .cardCopy(id=`${cardInfo.id}` class=`${cardInfo.class}`)
+            .cardCopy__head
+              h2= cardInfo.title
+              p.iconCopy
+                img(src="images/icon-copy.svg", alt="icon copy")
+            textarea(readonly="true" class="textCopy")= cardInfo.text
+
+    include ../includes/footer.pug
+
+    script(src="script/app.js") 

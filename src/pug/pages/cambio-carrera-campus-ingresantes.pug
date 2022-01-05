@@ -1,0 +1,58 @@
+-
+  let cardsInfo = [
+    {
+      id: "saludo",
+      title: "Saludo",
+      text: "Hola (nombre del alumno), para solicitar un cambio de sede/carrera los pasos son:",
+      class: "smallCard"
+    },
+    {
+      id: "descripccion",
+      title: "Descripccion",
+      text: `
+      - Ingresa al siguiente link: bit.ly/SolicitudAdmi y completa tus datos personales. Tener en cuenta que en "Trámite a realizar" primero debes escoger "Tramites Admisión" , luego en el desplegable ubica "Cambio de carrera/ sede", en "Descripción" indicas el motivo por el cual deseas realizar el cambio e indicar la nueva carrera/sede.
+      - Ingresantes Verano 2022: La fecha límite es el 29 de diciembre.
+      - Ingresantes Marzo 2022: La fecha limite es el 16 de marzo.`,
+      class: ""
+    },
+    {
+      id: "adicionales",
+      title: "Adicionales",
+      text: "",
+      class: "hideCard"
+    },
+    {
+      id: "para-el-asesor",
+      title: "Para el Asesor",
+      text: `Consultar dependiendo al requerimiento del alumno:
+      - ¿A qué carrera deseas cambiarte?
+      - ¿A qué campus deseas cambiarte?
+      Dependiendo de la respuesta del alumno revisar en la página www.utp.edu.pe la disponibilidad de la carrera o sede.`,
+      class: ""
+    }
+  ];
+
+doctype html
+html(lang="es")
+  include ../includes/head.pug
+    
+    block title
+      title Cambio de Carrera y Campus (Ingresantes) | UTP CENTER
+
+  body.grid
+    include ../includes/header.pug
+
+    main.main.grid-main
+      section.intro
+        h1.title Cambio de Carrera y Campus (Ingresantes)
+        for cardInfo in cardsInfo
+          .cardCopy(id=`${cardInfo.id}` class=`${cardInfo.class}`)
+            .cardCopy__head
+              h2= cardInfo.title
+              p.iconCopy
+                img(src="images/icon-copy.svg", alt="icon copy")
+            textarea(readonly="true" class="textCopy")= cardInfo.text
+
+    include ../includes/footer.pug
+
+    script(src="script/app.js") 

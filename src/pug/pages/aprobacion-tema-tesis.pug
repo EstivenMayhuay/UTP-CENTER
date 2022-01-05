@@ -1,0 +1,58 @@
+-
+  let cardsInfo = [
+    {
+      id: "saludo",
+      title: "Saludo",
+      text: "Hola (nombre del alumno), para solicitar la aprobación del tema de tesis los pasos son:",
+      class: "smallCard"
+    },
+    {
+      id: "descripccion",
+      title: "Descripccion",
+      text: `
+      1. Realiza el pago de S/320 por cualquiera de nuestros bancos autorizados: Interbank, Scotiabank, BCP y BBVA Continental
+      2. Una vez cancelado el trámite, deberá generar un Ticket a través del SAE en Línea y escoger en "Trámite a realizar" la opción "Aprobación/ampliación plan tesis o trabajo suficiencia profesional".
+      3. Completar la solicitud de aprobación del tema de tesis o trabajo de suficiencia profesional y adjuntarla al ticket.`,
+      class: ""
+    },
+    {
+      id: "adicionales",
+      title: "Adicionales",
+      text: `
+      - Es un trabajo de investigación científica o tecnológico de autoría propia. Puede ser presentado de manera individual o grupal (máximo 2 integrantes). El objetivo de la tesis es verificar una hipótesis o la respuesta consistente a una interrogante. Esta debe contener un marco teórico adecuado, rigurosa metodología y material bibliográfico actualizado.
+      - El plazo de atención es de 20 días hábiles.
+      - Para mayor información acerca de los documentos por adjuntar accede a: bit.ly/AprobacionTesis`,
+      class: ""
+    },
+    {
+      id: "para-el-asesor",
+      title: "Para el Asesor",
+      text: "",
+      class: "hideCard"
+    }
+  ];
+
+doctype html
+html(lang="es")
+  include ../includes/head.pug
+    
+    block title
+      title Aprobación del Tema de Tesis | UTP CENTER
+
+  body.grid
+    include ../includes/header.pug
+
+    main.main.grid-main
+      section.intro
+        h1.title Aprobación del Tema de Tesis
+        for cardInfo in cardsInfo
+          .cardCopy(id=`${cardInfo.id}` class=`${cardInfo.class}`)
+            .cardCopy__head
+              h2= cardInfo.title
+              p.iconCopy
+                img(src="images/icon-copy.svg", alt="icon copy")
+            textarea(readonly="true" class="textCopy")= cardInfo.text
+
+    include ../includes/footer.pug
+
+    script(src="script/app.js") 

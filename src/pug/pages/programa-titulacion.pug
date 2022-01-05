@@ -1,0 +1,52 @@
+-
+  let cardsInfo = [
+    {
+      id: "saludo",
+      title: "Saludo",
+      text: "Hola (nombre del alumno), comentarte que el Programa de Titulación es un programa formativo que incluye un seguimiento metodológico y práctico, además, de contar con un asesoramiento continuo para el desarrollo de la tesis, el cual está dirigido a los bachilleres de UTP.",
+      class: "smallCard"
+    },
+    {
+      id: "descripccion",
+      title: "Descripccion",
+      text: "En este programa, recibirás un acompañamiento planteado desde dos líneas académicas paralelas que te permitirán desarrollar tu tesis de inicio a fin.",
+      class: "smallCard"
+    },
+    {
+      id: "adicionales",
+      title: "Adicionales",
+      text: "Asimismo informarte que actualmente no contamos con inscripciones abiertas, para mayor información accede a: bit.ly/programtitulacion",
+      class: "smallCard"
+    },
+    {
+      id: "para-el-asesor",
+      title: "Para el Asesor",
+      text: "",
+      class: "hideCard"
+    }
+  ];
+
+doctype html
+html(lang="es")
+  include ../includes/head.pug
+    
+    block title
+      title Programa de Titulación | UTP CENTER
+
+  body.grid
+    include ../includes/header.pug
+
+    main.main.grid-main
+      section.intro
+        h1.title Programa de Titulación
+        for cardInfo in cardsInfo
+          .cardCopy(id=`${cardInfo.id}` class=`${cardInfo.class}`)
+            .cardCopy__head
+              h2= cardInfo.title
+              p.iconCopy
+                img(src="images/icon-copy.svg", alt="icon copy")
+            textarea(readonly="true" class="textCopy")= cardInfo.text
+
+    include ../includes/footer.pug
+
+    script(src="script/app.js") 

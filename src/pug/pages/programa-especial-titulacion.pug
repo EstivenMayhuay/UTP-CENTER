@@ -1,0 +1,54 @@
+-
+  let cardsInfo = [
+    {
+      id: "saludo",
+      title: "Saludo",
+      text: "Hola (nombre del alumno), comentarte que el Programa Especial de Titulación te ayudará a completar los requisitos necesarios para la obtención de tu título universitario.",
+      class: "smallCard"
+    },
+    {
+      id: "descripccion",
+      title: "Descripccion",
+      text: "Pensando en ti, hemos rediseñado el programa para ofrecerlo en modalidad remota sincrónica, con el acompañamiento de tu docente durante las clases, asesorías y hasta la sustentación de tu trabajo de investigación.",
+      class: "smallCard"
+    },
+    {
+      id: "adicionales",
+      title: "Adicionales",
+      text: `
+      - Ten en consideracion que está dirigido para ingresantes hasta el periodo 2014-1.
+      - Asimismo informarte que actualmente no contamos con inscripciones abiertas, para mayor información accede a: bit.ly/progespecialtit`,
+      class: "smallCard"
+    },
+    {
+      id: "para-el-asesor",
+      title: "Para el Asesor",
+      text: "",
+      class: "hideCard"
+    }
+  ];
+
+doctype html
+html(lang="es")
+  include ../includes/head.pug
+    
+    block title
+      title Programa Especial de Titulación | UTP CENTER
+
+  body.grid
+    include ../includes/header.pug
+
+    main.main.grid-main
+      section.intro
+        h1.title Programa Especial de Titulación
+        for cardInfo in cardsInfo
+          .cardCopy(id=`${cardInfo.id}` class=`${cardInfo.class}`)
+            .cardCopy__head
+              h2= cardInfo.title
+              p.iconCopy
+                img(src="images/icon-copy.svg", alt="icon copy")
+            textarea(readonly="true" class="textCopy")= cardInfo.text
+
+    include ../includes/footer.pug
+
+    script(src="script/app.js") 

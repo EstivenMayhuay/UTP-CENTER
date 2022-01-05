@@ -1,0 +1,57 @@
+-
+  let cardsInfo = [
+    {
+      id: "saludo",
+      title: "Saludo",
+      text: "Hola (nombre del alumno), para solicitar la actualización de tus datos personales los pasos son:",
+      class: "smallCard"
+    },
+    {
+      id: "descripccion",
+      title: "Descripccion",
+      text: `
+      1. Registrar tu solicitud en nuestro Portal de Admisión (admision.utp.edu.pe).
+      2. En la descripción del trámite, detalla los datos que deseas modificar. Si los datos a modificar corresponden a nombres, apellidos y/o número de documento de identidad, deberás adjuntar una copia de tu DNI o carné de extranjería.
+      3. Después de registrar tu solicitud, recibirás un correo de confirmación con el número de ticket generado.
+      4. Tu solicitud será atendida dentro de los dos días hábiles posteriores a su registro.
+      5. La respuesta a tu solicitud será enviada al correo que registraste en el formulario.`,
+      class: ""
+    },
+    {
+      id: "adicionales",
+      title: "Adicionales",
+      text: "Dato: Se puede solicitar hasta el último día de clases, si culminó PAU debes enviar la solicitud vía sae.utp.edu.pe",
+      class: "smallCard"
+    },
+    {
+      id: "para-el-asesor",
+      title: "Para el Asesor",
+      text: "",
+      class: "hideCard"
+    }
+  ];
+
+doctype html
+html(lang="es")
+  include ../includes/head.pug
+    
+    block title
+      title Actualización de Datos Personales | UTP CENTER
+
+  body.grid
+    include ../includes/header.pug
+
+    main.main.grid-main
+      section.intro
+        h1.title Actualización de Datos Personales
+        for cardInfo in cardsInfo
+          .cardCopy(id=`${cardInfo.id}` class=`${cardInfo.class}`)
+            .cardCopy__head
+              h2= cardInfo.title
+              p.iconCopy
+                img(src="images/icon-copy.svg", alt="icon copy")
+            textarea(readonly="true" class="textCopy")= cardInfo.text
+
+    include ../includes/footer.pug
+
+    script(src="script/app.js") 
