@@ -266,7 +266,7 @@ body {
   cursor: pointer;
 }
 
-textarea {
+.cardCopy > textarea {
   display: block;
   width: 100%;
   height: calc(var(--hCardCopy) - var(--hCardCopyHead));
@@ -293,6 +293,17 @@ textarea {
   font-weight: 600;
   padding: 4px 8px;
   border-radius: 4px;
+}
+
+/* Tables */
+.contentTable {
+  /*outline: 2px solid red;*/
+}
+
+table {
+  outline: 2px solid green;
+  display: block;
+  width: 100%;
 }
 
 /* Footer */

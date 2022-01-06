@@ -1,0 +1,88 @@
+-
+  let userPassInvalid = `
+    ¿Tiene acceso a otras plataformas como canvas o correo institucional con la contraseña que estás colocando?
+    - NO: Que cambie contraseña. bit.ly/InstrucContrasenaUTP
+    - Sí: Verique nuevamente los descartes anteriores.`;
+
+  let speechPortalEstudiante = `
+  Hola (nombre de alumno), para acceder a tu portal de estudiante primero verifica que la página sea correcta (portalestudiante.utp.edu.pe),luego valida tus credenciales, el acceso es solo con tu código de alumno incluyendo la U en caso corresponda, sin "@utp.edu.pe" 
+
+  La contraseña es la misma que usas para acceder a canvas y a tu correo institucional, también verifica las imágenes al darle click en no soy un robot,siempre selecciona ingresar no limpiar.
+
+  (Asesor debe validar en el simulador del portal si código está activo)
+
+  ¿Lograste ingresar?
+
+  Sí: Perfecto, ¿tienes alguna consulta adicional?
+
+  No: Por favor, verifica tu conexión a internet, borra cookies e historial. 
+  Ingresa a través de una pestaña en incógnita o usando otro navegador o dispositivo.
+
+  ¿Lograste acceder?
+
+  Sí: Perfecto, ¿tienes alguna consulta adicional?
+
+  No:Entiendo, en ese caso por favor confírmame ¿tienes acceso a otras plataformas como canvas o correo institucional con la misma contraseña?
+
+  No: Por favor cambia la contraseña en: contrasena.utp.edu.pe puedes descargar un instructivo aquí: bit.ly/InstrucContrasenaUTP
+
+  Sí: Por favor envíame una imagen de lo que te figura o indícame qué mensaje de error aparece.
+
+  - Si figura que se ha generado un error al momento de la validación: 
+
+  Por favor verifica nuevamente las imágenes al darle click a no soy un robot (si figura check es correcto y tendría que acceder sin problemas).
+
+  Validar si aparece otro tipo de problema.`;
+
+doctype html
+html(lang="es")
+  include ../includes/head.pug
+    
+    block title
+      title  Validacion Portal del Estudiante | UTP CENTER
+
+  body.grid
+    include ../includes/header.pug
+
+    main.main.grid-main
+      section.intro
+        h1.title Validacion Portal del Estudiante
+
+        .contentTable
+          table(width="100%", border="1")
+            tr
+              th(colspan="8") Portal del Estudiante
+            tr
+              th Página
+              td portalestudiante.utp.edu.pe
+            tr
+              th Usuario
+              td Debe redactar solo su código sin "@utp.edu.pe". Validar que el código sea el correcto, siempre hacer click en ingresar no en limpiar.
+            tr
+              th Contraseña
+              td Con la que accede a canvas o correo institucional
+            tr
+              th No soy robot
+              td Verificar que valida correctamente las imágenes
+            tr
+              th Usuario o contraseña incorrecta
+              td
+                textarea= userPassInvalid
+            tr
+              th Usuario no permitido
+              td Verificar si está accediendo a la página correcta y si tiene código activo
+            tr
+              th Cuenta no registrada
+              td Que verifique si es que tiene alguna invitación de zoom en el correo UTP. Si es que la tiene que acepte la invitación. En el caso de no tenerla solicitar que genere su registro en el link: https://zoom.us/signup
+            tr
+              th Error de validacion
+              td Tiene que validar las imágenes al hacer click en no soy robot, si aparece el check es correcto y tendría que acceder al portal sin problema, validar si existe otro tipo de error. Si le aparece el mismo error, que borre cookies, incógnito y/u otro navegador.
+
+        .cardCopy
+          .cardCopy__head
+            h2 SPEECH Portal del Estudiante
+          textarea= speechPortalEstudiante
+
+    include ../includes/footer.pug
+
+    script(src="script/app.js") 
