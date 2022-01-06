@@ -494,8 +494,19 @@ table tbody td textarea {
     justify-content: center;
   }
 
-  /* Footer */
+  /* Info */
+  .intro {
+    /*align-items: center;*/
+    row-gap: 32px;
+  }
 
+  .cardCopy,
+  .contentTable {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  /* Footer */
   .footer {
     position: absolute;
     bottom: -48px;
