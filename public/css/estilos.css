@@ -337,6 +337,10 @@ tbody td textarea {
   color: var(--black-variant);
 }
 
+.subTitleTable {
+  text-align: left;
+}
+
 table tbody td textarea {
   display: block;
   width: 100%;
@@ -352,12 +356,14 @@ table tbody td textarea {
 }
 
 .portalEstudiante tbody td textarea,
-.validacionUTP tbody td textarea {
+.validacionUTP tbody td textarea,
+.validacionCanvas tbody td textarea {
   min-height: 120px;
 }
 
 .tableSpeech tbody td textarea,
-.speechUTP tbody td textarea {
+.speechUTP tbody td textarea,
+.speechCanvas tbody td textarea {
   min-height: 200px;
 }
 
