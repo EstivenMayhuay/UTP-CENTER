@@ -277,6 +277,7 @@ body {
   padding: 16px 8px;
   border: none;
   outline: none;
+  background: var(--white);
   font-size: var(--body-2);
   line-height: 1.6rem;
 }
@@ -342,7 +343,6 @@ table tbody td textarea {
   height: calc(100% - 32px);
   outline: none;
   border: none;
-  overflow: hidden;
   resize: none;
   line-height: 1.6rem;
   font-size: var(--body-1);
@@ -351,11 +351,13 @@ table tbody td textarea {
   overflow-y: scroll;
 }
 
-.portalEstudiante tbody td textarea {
+.portalEstudiante tbody td textarea,
+.validacionUTP tbody td textarea {
   min-height: 120px;
 }
 
-.tableSpeech tbody td textarea {
+.tableSpeech tbody td textarea,
+.speechUTP tbody td textarea {
   min-height: 200px;
 }
 

@@ -1,0 +1,76 @@
+-
+  let utpValidation = `En caso de no acceder con los pasos anteriores verificar:
+  - Conexión a internet.
+  - Validar en otro dispositivo.
+  - Desinstalar, apagar equipo 10 minutos, reinstalar y acceder nuevamente.`;
+
+  let speechUTPValidate = `Hola (nombre de alumno), para acceder a tu aplicativo UTP+ , valida tus credenciales, el acceso es solo con tu código de alumno incluyendo la U en caso corresponda, sin "@utp.edu.pe" 
+  
+  La contraseña es la misma que usas para acceder a canvas y a tu correo institucional.
+  
+  (Asesor debe validar en el simulador del portal si código está activo) (El aplicativo se activa cuando inicia el ciclo y se deshabilita en vacaciones)
+
+  ¿Lograste ingresar?
+
+  Sí: Perfecto, ¿tienes alguna consulta adicional?
+
+  No: Por favor, verifica tu conexión a internet. 
+
+  ¿Lograste acceder?
+
+  Sí: Perfecto, ¿tienes alguna consulta adicional?
+
+  No:Entiendo, en ese caso por favor confírmame ¿tienes acceso a otras plataformas como canvas o correo institucional con la misma contraseña?
+
+  No: Por favor cambia la contraseña en: contrasena.utp.edu.pe puedes descargar un instructivo aquí: bit.ly/InstrucContrasenaUTP
+
+  Sí: Por favor desinstala la aplicación, apaga el equipo por 10 minutos, reinstala y accede nuevamente.`;
+
+doctype html
+html(lang="es")
+  include ../includes/head.pug
+    
+    block title
+      title Validacion UTP+ | UTP CENTER
+
+  body.grid
+    include ../includes/header.pug
+
+    main.main.grid-main
+      section.intro
+        h1.title Validacion UTP+
+
+        .contentTable
+          table.validacionUTP
+            tr
+              th(class="titleTable" colspan="2") UTP+
+            tr
+              th Aplicativo
+              td UTP+
+            tr
+              th Usuario
+              td Redacta solo tu código y no le agrega "@utp.edu.pe". Que su código de alumno sea el correcto
+            tr
+              th Contraseña
+              td Con la que accede a su portal de estudiante, correo institucional o canvas
+            tr
+              th Verificar e Intentar
+              td
+                textarea(readonly="true")= utpValidation
+            tr
+              th Dato
+              td Validamos que tenga cursos matriculados en el período actual
+
+
+        .contentTable
+          table.speechUTP
+            tr 
+              th(class="titleTable")  Speech Validacion UTP+
+            tr
+              td
+                textarea(readonly="true")= speechUTPValidate
+
+
+    include ../includes/footer.pug
+
+    script(src="script/app.js") 
