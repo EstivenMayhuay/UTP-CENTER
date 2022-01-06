@@ -162,9 +162,9 @@
       <section class="intro">
         <h1 class="title">Validacion Portal del Estudiante</h1>
         <div class="contentTable">
-          <table width="100%" border="1">
+          <table class="portalEstudiante">
             <tr>
-              <th colspan="8">Portal del Estudiante</th>
+              <th class="titleTable" colspan="8">Portal del Estudiante</th>
             </tr>
             <tr>
               <th>Página</th>
@@ -185,7 +185,7 @@
             <tr>
               <th>Usuario o contraseña incorrecta</th>
               <td>
-                <textarea>
+                <textarea readonly="true">
   ¿Tiene acceso a otras plataformas como canvas o correo institucional con la contraseña que estás colocando?
   - NO: Que cambie contraseña. bit.ly/InstrucContrasenaUTP
   - Sí: Verique nuevamente los descartes anteriores.</textarea>
@@ -203,14 +203,20 @@
               <th>Error de validacion</th>
               <td>Tiene que validar las imágenes al hacer click en no soy robot, si aparece el check es correcto y tendría que acceder al portal sin problema, validar si existe otro tipo de error. Si le aparece el mismo error, que borre cookies, incógnito y/u otro navegador.</td>
             </tr>
+            <tr>
+              <th>Dato</th>
+              <td>Podrá acceder siempre que tenga cursos matriculados en periodos anteriores, actual o posteriores. Validamos en simulador que sí tengamos acceso.</td>
+            </tr>
           </table>
         </div>
-        <div class="cardCopy">
-          <div class="cardCopy__head">
-            <h2>SPEECH Portal del Estudiante</h2>
-          </div>
-          <textarea>
-Hola (nombre de alumno), para acceder a tu portal de estudiante primero verifica que la página sea correcta (portalestudiante.utp.edu.pe),luego valida tus credenciales, el acceso es solo con tu código de alumno incluyendo la U en caso corresponda, sin &quot;@utp.edu.pe&quot; 
+        <div class="contentTable">
+          <table class="tableSpeech">
+            <tr>
+              <th class="titleTable">SPEECH Portal del Estudiante</th>
+            </tr>
+            <tr>
+              <td>
+                <textarea readonly="true">Hola (nombre de alumno), para acceder a tu portal de estudiante primero verifica que la página sea correcta (portalestudiante.utp.edu.pe),luego valida tus credenciales, el acceso es solo con tu código de alumno incluyendo la U en caso corresponda, sin &quot;@utp.edu.pe&quot; 
 
 La contraseña es la misma que usas para acceder a canvas y a tu correo institucional, también verifica las imágenes al darle click en no soy un robot,siempre selecciona ingresar no limpiar.
 
@@ -238,6 +244,25 @@ Sí: Por favor envíame una imagen de lo que te figura o indícame qué mensaje 
 Por favor verifica nuevamente las imágenes al darle click a no soy un robot (si figura check es correcto y tendría que acceder sin problemas).
 
 Validar si aparece otro tipo de problema.</textarea>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="contentTable">
+          <table class="validacionTutorias">
+            <tr> 
+              <th class="titleTable"> Validación - TUTORÍAS</th>
+            </tr>
+            <tr>
+              <td>
+                <textarea readonly="true">Para poder validar los problemas con esta opción de plataformas son los siguientes:
+  1.- Valida que el alumno tenga la cuenta Zoom activa de su correo UTP, esto permitirá poder identificar si activó o no su cuenta.
+  2.- Valida si dentro de la App o Programa Zoom haya iniciado sesión con su correo UTP, permitirá identificar que el alumno no haya iniciado sesión con un correo diferente.
+  3.- Valida si ingreso a un taller menor o mayor de 50, en el caso haya entrado a uno de 50 recomendar otro taller, si se trata de tutoría tiene que entrar a uno menor de 5. 
+  4.- Valida si logró aceptar la invitación de Zoom en su correo UTP o se registró con el correo UTP desde la propia web de Zoom.</textarea>
+              </td>
+            </tr>
+          </table>
         </div>
       </section>
     </main>
