@@ -1,0 +1,77 @@
+-
+  let validatePortalPAU = `¿Tiene acceso a otras plataformas como canvas o correo institucional con la contraseña que estás colocando?
+  - NO: Que cambie contraseña. bit.ly/InstrucContrasenaUTP
+  - Sí: Verique nuevamente los descartes anteriores.`;
+
+  let speechInscripccion = `Hola (nombre de alumno), para acceder a la inscripcion del programa de avance universitario primero verifica que te encuentras dentro del grupo de requerimientos en la web de resultados de admisión(webprojects2.utp.edu.pe/publicacionweb/Publicacion.aspx).
+  
+  El DNI y fecha de nacimiento es del alumno postulante
+
+  ¿Lograste ingresar?
+
+  Sí: Perfecto, ¿tienes alguna consulta adicional?
+
+  No: Por favor, verifica tu conexión a internet, borra cookies e historial. 
+  Ingresa a través de una pestaña en incógnita o usando otro navegador o dispositivo.
+
+  ¿Lograste acceder?
+
+  Sí: Perfecto, ¿tienes alguna consulta adicional?
+
+  No:Entiendo, en ese caso el asesor debe validar dentro de la base de alumnos ingresantes ubicado en INFO SAE si el alumno es postulante del ciclo actual. 
+
+  "En el caso no este dentro del grupo Informarlo"
+
+  Sí: Por favor envíame una imagen de lo que te figura o indícame qué mensaje de error aparece.
+
+  Validar si aparece otro tipo de problema.`;
+
+doctype html
+html(lang="es")
+  include ../includes/head.pug
+    
+    block title
+      title Validacion Inscripccion PAU | UTP CENTER
+
+  body.grid
+    include ../includes/header.pug
+
+    main.main.grid-main
+      section.intro
+        h1.title Validacion Inscripccion PAU
+
+        .contentTable
+          table.validacionInscripccion
+            tr
+              th(class="titleTable" colspan="2") Incripccion PAU
+            tr
+              th(class="subTitleTable") Página
+              td webprojects2.utp.edu.pe/publicacionweb/Publicacion.aspx
+            tr
+              th(class="subTitleTable") DNI
+              td Tiene que ingresar el DNI de postulante
+            tr
+              th(class="subTitleTable") Fecha Nacimiento
+              td CFecha de nacimiento del postulante
+            tr
+              th(class="subTitleTable") DNI incorrecto
+              td Sí: Verifique nuevamente los descartes anteriores.
+            tr
+              th(class="subTitleTable") Error en Fecha de Nacimiento
+              td Verifique nuevamente los descartes anteriores.
+            tr
+              th(class="subTitleTable") Dato
+              td Podra inscribirse a PAU siempre y cuando se le indique que requiere en la pagina web de resultados de admisión
+
+        .contentTable
+          table.speechInscripccion
+            tr 
+              th(class="titleTable")  Speech Validacion Inscripccion
+            tr
+              td
+                textarea(readonly="true")= speechInscripccion
+
+
+    include ../includes/footer.pug
+
+    script(src="script/app.js") 

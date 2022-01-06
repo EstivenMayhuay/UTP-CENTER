@@ -1,0 +1,119 @@
+-
+  let activateCuenta = `Hola (Nombre de alumno), para activar tu enta zoom sigue los siguientes pasos:
+    Paso1: Descarga Zoom desde la página zoom.us/downland desde tu PC, laptop o móvil.
+    Paso 2: Ingresa a Zoom con la opción "Iniciar sesión con SSO".
+    Paso 3: Introduce el dominio utpvirtual.
+    Paso 4: Ingresa tu correo institucional (códigoalumno@utp.edu.pe) y contraseña.
+
+  ¡Listo, ahora ya podrás ingresar a tus clases! También puedes ver el tutorial de activación en el siguiente enlace: bit.ly/TutorialActZoom`;
+
+  let speechZoom = `Hola (nombre de alumno), para acceder a tus clases a través de zoom  primero valida tus credenciales, el acceso es solo con tu código de alumno incluyendo la U en caso corresponda, agregando "@utp.edu.pe"
+
+  La contraseña es la que tú asignaste, debe contener 8 dígitos a más, una mayúscula, minúscula y un número como mínimo.
+
+  ¿Activaste tu cuenta?
+
+  Sí: Perfecto, valida que al acceder a canvas estés registrada con el zoom de utp no con una cuenta personal.
+
+  No: Verifica en tu correo institucional la invitación, acéptala para activar la cuenta.
+
+  ¿Te llegó la invitación para activar la cuenta? 
+
+  Sí: Por favor acéptala y asigna la contraseña bajo las características mencionadas.
+  
+  No: Puedes activar tu cuenta ingresando a: https://zoom.us/signup colocas tus datos y el registro es con tu correo institucional, así te llegará la invitación a ese correo.
+  
+  ¿Lograste acceder?
+  
+  Sí: Perfecto, ¿tienes alguna consulta adicional?
+
+  No: Por favor, verifica tu conexión a internet, borra cookies e historial. 
+  Ingresa a través de una pestaña en incógnita o usando otro navegador o dispositivo.
+
+  Por favor envíame una imagen de lo que te figura o indícame qué mensaje de error aparece.
+
+  -Si el inconveniente es con la contraseña:
+
+  Realiza el cambio de contraseña a través del siguiente enlace: https://zoom.us/forgot_password  redactando tu correo institucional.
+
+  -Si no le llega el correo para cambio de contraseña: 
+
+  Si ya verificó en bandeja de entrada y no deseados de su correo institucional, que actualice la página, repetir la acción de recuperar contraseña, caso contrario alertar al monitor.
+  
+  - Si aparece cuenta bloqueada: 
+
+  Realiza el cambio de contraseña a través del siguiente enlace: https://zoom.us/forgot_password  redactando tu correo institucional.
+
+  Verifica que al correo te llegue una notificación para el cambio de contraseña. Revisa en la bandeja de entrada (prioritarios y otros) y spam.
+
+  Ingresa al aplicativo zoom, redacta tu correo institucional y la nueva contraseña.`;
+
+  let changePassword = `SÍ: Realizar cambio de contraseña a través del siguiente enlace >> https://zoom.us/forgot_password >> Redactando su correo UTP.
+  
+  Luego, verifica que al correo UTP le llegue una notificación para el cambio de contraseña. Revisa en la bandeja de entrada (prioritarios y otros) y spam.
+  
+  Que ingrese al aplicativo zoom, redacte su correo UTP y la nueva contraseña.`;
+
+  let failed = `
+  - Que realice cambio de contraseña a través del siguiente enlace >> https://zoom.us/forgot_password >> Redactando su correo UTP.
+  - Luego, verifica que al correo UTP le llegue una notificación para el cambio de contraseña. Revisa en la bandeja de entrada (prioritarios y otros) y spam.
+  - Que ingrese al aplicativo zoom, redacte su correo UTP y la nueva contraseña.`;
+
+doctype html
+html(lang="es")
+  include ../includes/head.pug
+    
+    block title
+      title Validacion Zoom | UTP CENTER
+
+  body.grid
+    include ../includes/header.pug
+
+    main.main.grid-main
+      section.intro
+        h1.title Validacion Zoom
+
+        .contentTable
+          table.validacionesZoom
+            tr
+              th(class="titleTable" colspan="3") Zoom
+            tr
+              th(class="subTitleTable" rowspan="2") Inicio de sesión
+              th(class="subTitleTable") Usuario
+              td portalpau.utp.edu.pe
+            tr
+              th(class="subTitleTable") Contraseña
+              td Creada por alumno que contenga de 8 dígitos a más, una mayúscula, minúscula y un número como mínimo
+            tr
+              th(class="subTitleTable") Activación de cuenta
+              th(class="subTitleTable") Pasos a seguir
+              td
+                textarea(readonly="true")= activateCuenta
+            tr
+              th(class="subTitleTable" rowspan="3") Usuario o contraseña incorrecta
+              th(class="subTitleTable" rowspan="2") Consultar si ya activó zoom con correo UTP y que está colocando los datos correctos (correo UTP).
+              td
+                textarea(readonly="true")= changePassword
+            tr
+              td NO: Alertar al monitor
+            tr
+              th(class="subTitleTable") No le llega correo para cambio de contraseña
+              td Si ya verificó en bandeja de entrada y no deseados de su correo UTP. Alertar al monitor
+            tr
+              th(class="subTitleTable") Cuenta bloqueada
+              th(class="subTitleTable") Su cuenta ha sido bloqueada debido a múltiples intentos de sesión fallidos
+              td
+                textarea(readonly="true")= failed
+
+        .contentTable
+          table.speechZoom
+            tr
+              th(class="titleTable") Speech Validacion Zoom
+            tr
+              td
+                textarea(readonly="true")= speechZoom
+
+
+    include ../includes/footer.pug
+
+    script(src="script/app.js") 

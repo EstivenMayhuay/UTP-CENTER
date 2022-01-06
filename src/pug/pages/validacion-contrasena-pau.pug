@@ -1,0 +1,89 @@
+-
+  let restorePassword = `
+  • Que revise su bandeja de entrada, spam y no deseados de su correo personal desde el navegador, no desde el aplicativo. 
+  • En caso de no llegarle, que verifique que sí le llegan correos y que su bandeja no está llena. 
+  • Que el correo personal que colocó para recuperar su contraseña, sea el mismo registrado en el CRM.
+  • A pesar de haber validado todo, no le llega correo, alertar al monitor.`;
+
+  let dontRememberPassword = `¿Su correo personal actual coincide con el registrado en el CRM?
+    • Sí: Indicarle que siga el 3er paso del instructivo de cambio de contraseña >> "bit.ly/InstrucContrasenaUTP". En el caso de llamada, indicarle el enlace o que lo busque en Portal SAE >> Instructivo para Cambio de Contraseña.
+    • No: 
+      1.Solicitar el correo personal actual y fecha de nacimiento. 
+      2.Una vez obtenido los datos, alertar al monitor para la actualización de datos. 
+      3.Mencionar a alumno que en el transcurso de 15 minutos se va a actualizar el correo personal y que después de ello realice la recuperación de contraseña siguiendo el 3er paso del instructivo "bit.ly/InstrucContrasenaUTP".`;
+
+  let speechPassword = `Hola (nombre de alumno), para cambiar la contraseña ingresa a: contrasena.utp.edu.pe y que sigue el paso a paso del instructivo "bit.ly/InstrucContrasenaUTP".
+
+  Si desea cambiar la contraseña por seguridad:
+
+  -Puedes cambiarla, dentro del portal de estudiante en la opción "Modificar contraseña".
+
+  Ten en cuenta que al cambiar la contraseña la espera es de 1 hora aprox. para acceder al correo UTP ya que la sincronización puede tardar.
+
+  Si no recuerda su contraseña:
+  (Asesor debe validar que el correo personal que está colocando coincida con el registrado en CRM.)
+
+  De no ser así:
+
+  - Para que cambies tu contraseña por favor confírmame, ¿cuál es tu correo personal actual y tu fecha de nacimiento?
+
+  Una vez obtenidos los datos alertar al monitor para la actualización
+
+  - Hemos actualizado el correo, por favor luego de 15 minutos ingresa nuevamente a contrasena.utp.edu.pe/Recuperacion/OlvideMiClave.aspx para generar el cambio.
+
+  Si no le llega el mensaje de recuperación:
+
+  - Por favor verifica la bandeja en prioritarios,otros o spam (no deseados).
+
+  - Actualiza la página web y verifica si otros mensajes llegan a tu correo.
+
+  Si a pesar de haber validado todo no llega el correo alertar al monitor.`;
+
+doctype html
+html(lang="es")
+  include ../includes/head.pug
+    
+    block title
+      title Validacion Contraseñas UTP | UTP CENTER
+
+  body.grid
+    include ../includes/header.pug
+
+    main.main.grid-main
+      section.intro
+        h1.title Validacion Contraseñas UTP
+
+        .contentTable
+          table.validacionesPass
+            tr
+              th(class="titleTable" colspan="3") Contraseñas
+            tr
+              th(class="subTitleTable") Cambio de contraseña
+              th(class="subTitleTable") Expiro Contraseña
+              td Cuando cambia su contraseña, tiene que esperar de una hora a más para acceder al correo institucional, hay demora en la sincronización del reconocimiento de su nueva contraseña.
+            tr
+              th(class="subTitleTable" rowspan="4") Recuperación de contraseña
+            tr
+              th(class="subTitleTable") Tener en cuenta
+              td Cuando cambia su contraseña, tiene que esperar de una hora a más para acceder al correo institucional, hay demora en la sincronización del reconocimiento de su nueva contraseña.
+            tr
+              th(class="subTitleTable") No recuerda contraseña
+              td
+                textarea(readonly="true")= dontRememberPassword
+            tr
+              th(class="subTitleTable") No llega correo de recuperación
+              td
+                textarea(readonly="true")= restorePassword
+
+        .contentTable
+          table.speechPassword
+            tr
+              th(class="titleTable") Speech Validacion Contraseñas
+            tr
+              td
+                textarea(readonly="true")= speechPassword
+
+
+    include ../includes/footer.pug
+
+    script(src="script/app.js") 
