@@ -357,14 +357,22 @@ table tbody td textarea {
 
 .portalEstudiante tbody td textarea,
 .validacionUTP tbody td textarea,
-.validacionCanvas tbody td textarea {
+.validacionCanvas tbody td textarea,
+.validacionesPortalPAU tbody td textarea,
+.validacionInscripccion tbody td textarea,
+.validacionesZoom tbody td textarea,
+.validacionesPass tbody td textarea {
   min-height: 120px;
 }
 
 .tableSpeech tbody td textarea,
 .speechUTP tbody td textarea,
-.speechCanvas tbody td textarea {
-  min-height: 200px;
+.speechCanvas tbody td textarea,
+.speechPortalPAU tbody td textarea,
+.speechInscripccion tbody td textarea,
+.speechZoom tbody td textarea,
+.speechPassword tbody td textarea {
+  min-height: 320px;
 }
 
 .validacionTutorias tbody td textarea {
