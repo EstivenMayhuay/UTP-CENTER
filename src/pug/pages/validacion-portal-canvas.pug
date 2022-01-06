@@ -1,0 +1,87 @@
+-
+  let validatePortalCanvas = `¿Tiene acceso a otras plataformas como canvas o correo institucional con la contraseña que estás colocando?
+  - NO: Que cambie contraseña. bit.ly/InstrucContrasenaUTP
+  - Sí: Verique nuevamente los descartes anteriores.`;
+
+  let speechCanvas = `Hola (nombre de alumno), para acceder a canvas primero verifica que la página sea correcta (canvas.utp.edu.pe),luego valida tus credenciales, el acceso es solo con tu código de alumno incluyendo la U en caso corresponda, agregando "@utp.edu.pe" 
+  
+  La contraseña es la misma que usas para acceder al portal de estudiante y a tu correo institucional, también verifica el acceso en "iniciar con cuenta de microsoft" o "con cuenta de canvas".
+  
+  (Asesor debe validar con el monitor si cuenta de canvas del alumno está activa)
+  
+  ¿Lograste ingresar?
+
+  Sí: Perfecto, ¿tienes alguna consulta adicional?
+
+  No: Por favor, verifica tu conexión a internet, borra cookies e historial. 
+  Ingresa a través de una pestaña en incógnita o usando otro navegador o dispositivo.
+
+  ¿Lograste acceder?
+
+  Sí: Perfecto, ¿tienes alguna consulta adicional?
+
+  No:Entiendo, en ese caso por favor confírmame ¿tienes acceso a otras plataformas como portal de estudiante o correo institucional con la misma contraseña?
+
+  No: Por favor cambia la contraseña en: contrasena.utp.edu.pe puedes descargar un instructivo aquí: bit.ly/InstrucContrasenaUTP
+
+  Sí: Por favor envíame una imagen de lo que te figura o indícame qué mensaje de error aparece.`;
+
+doctype html
+html(lang="es")
+  include ../includes/head.pug
+    
+    block title
+      title Validacion Portal Canvas | UTP CENTER
+
+  body.grid
+    include ../includes/header.pug
+
+    main.main.grid-main
+      section.intro
+        h1.title Validacion Portal Canvas
+
+        .contentTable
+          table.validacionCanvas
+            tr
+              th(class="titleTable" colspan="2") CANVAS
+            tr
+              th(class="subTitleTable") Página
+              td canvas.utp.edu.pe
+            tr
+              th(class="subTitleTable") Usuario
+              td Código + "@utp.edu.pe". Que su código de alumno es el correcto 
+            tr
+              th(class="subTitleTable") Contraseña
+              td Con la que accede a su portal de estudiante, correo institucional o canvas
+            tr
+              th(class="subTitleTable") Opciones
+              td Intentar en opción con cuenta de canvas o con cuenta de microsoft
+            tr
+              th(class="subTitleTable") Usuario o contraseña incorrecta
+              td
+                textarea(readonly="true")= validatePortalCanvas
+            tr
+              th(class="subTitleTable") Opción zoom no carga
+              td(rowspan="2") Borrar cookies e historial.  Ingresar desde incógnito o por otro navegador. Si ya realizó lo anterior y sigue presentando inconvenientes alertar al monitor.
+            tr
+              th(class="subTitleTable") Sesión expirada en opción zoom
+            tr
+              th(class="subTitleTable") Error autenticación
+              td Consultar si es que tiene sesión inciada en zoom solo con su correo UTP y no hay ninguna otra sesión con cuentas externas.(personales)
+            tr
+              th(class="subTitleTable") Dato
+              td Validamos que esté matriculado actualmente
+
+
+        .contentTable
+          table.speechCanvas
+            tr 
+              th(class="titleTable")  Speech Validacion Canvas
+            tr
+              td
+                textarea(readonly="true")= speechCanvas
+
+
+    include ../includes/footer.pug
+
+    script(src="script/app.js") 
