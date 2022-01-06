@@ -346,6 +346,7 @@ table tbody td textarea {
   resize: none;
   line-height: 1.6rem;
   font-size: var(--body-1);
+  background: var(--white);
   padding: 8px;
   overflow-y: scroll;
 }
