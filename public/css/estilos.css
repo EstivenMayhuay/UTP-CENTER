@@ -40,7 +40,7 @@ body {
   position: relative;
   display: block;
   max-width: 100%;
-  min-height: 100vh;
+  min-height: auto;
 }
 
 .grid {
@@ -68,8 +68,6 @@ body {
 /* Header */
 .header {
   position: relative;
-  /*position: sticky;
-  top: 0;*/
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
@@ -92,6 +90,13 @@ body {
 
 .logoUTP {
   left: 24px;
+}
+
+.logoUTP > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* Navigation */
@@ -167,6 +172,11 @@ body {
 }
 
 /* Main */
+.main {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
 
 /* content cardsLink */
 .content-cardsLink {
@@ -175,6 +185,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 24px;
+  width: 100%;
   padding: 24px;
 }
 
@@ -337,10 +348,6 @@ tbody td textarea {
   color: var(--black-variant);
 }
 
-.subTitleTable {
-  text-align: left;
-}
-
 table tbody td textarea {
   display: block;
   width: 100%;
@@ -387,10 +394,13 @@ table tbody td textarea {
   font-size: var(--body-1);
 }
 
+.subTitleTable {
+  text-align: left;
+}
+
 /* Footer */
 .footer {
-  /*position: sticky*/
-  position: relative;
+  position: sticky;
   bottom: 0;
   left: 0;
   display: flex;
@@ -407,4 +417,87 @@ table tbody td textarea {
   font-family: var(--fontBody);
   font-size: var(--caption);
   font-weight: 600;
+}
+
+/* Desktop */
+@media screen and (min-width: 1024px) {
+  :root {
+    --headerGrid: 2;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(12, auto);
+    grid-template-rows: repeat(3, auto);
+    background: var(--white-variant);
+  }
+
+  .grid-header {
+    grid-column: 1 / var(--headerGrid);
+    grid-row: 1 / 4;
+  }
+
+  .grid-main {
+    grid-column: var(--headerGrid) / 13;
+    grid-row: 1;
+  }
+
+  .grid-footer {
+    grid-column: var(--headerGrid) / 13;
+    grid-row: 2;
+  }
+
+  /* Header */
+  .header {
+    /*outline: 2px solid blue;*/
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    row-gap: 24px;
+    width: 100%;
+    height: calc(100% + 50px);
+  }
+
+  .iconMenu {
+    display: none;
+  }
+
+  .logoUTP {
+    /*outline: 2px solid blue;*/
+    position: relative;
+    left: 0;
+    display: block;
+    width: 140px;
+  }
+
+  /* navigation */
+  .nav {
+    /*outline: 2px solid green;*/
+    position: sticky;
+    left: 0;
+    top: 0;
+    display: flex;
+    box-shadow: none;
+    width: 320px;
+    padding: 0;
+    z-index: 10;
+  }
+
+  /* Main */
+  .main {
+    position: sticky;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Footer */
+
+  .footer {
+    position: absolute;
+    bottom: -48px;
+  }
 }
