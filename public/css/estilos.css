@@ -419,6 +419,31 @@ table tbody td textarea {
   font-weight: 600;
 }
 
+/* Videos */
+.content-videos {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+}
+
+videos {
+  border: 2px solid blue;
+  display: block;
+  height: 100%;
+  aspect-ratio: 16/9;
+}
+
+/* Tablets */
+@media screen and (min-width: 768px) {
+  /* Videos */
+  .content-videos {
+    width: 70%;
+    margin: 0 auto;
+  }
+}
+
 /* Desktop */
 @media screen and (min-width: 1024px) {
   :root {
