@@ -1,3 +1,13 @@
+import hamburger from "./modules/menu_hamburger.js";
+
+const d = document;
+
+d.addEventListener("DOMContentLoaded", () => {
+  hamburger(".nav", ".iconMenu");
+});
+
+// event menu active
+
 // Event Submenu
 (function () {
   let lists = Array.from(
@@ -17,18 +27,6 @@
 
       subMenu.style.height = `${height}px`;
     });
-  });
-})();
-
-// Event Navigation Menu
-(function () {
-  let iconMenu = document.querySelector(".iconMenu");
-
-  iconMenu.addEventListener("click", function () {
-    let menu = this.nextElementSibling;
-    let parentMenu = this.parentElement;
-
-    menu.classList.toggle("showMenu");
   });
 })();
 
