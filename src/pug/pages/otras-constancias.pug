@@ -50,6 +50,13 @@ html(lang="es")
 
   body.grid
     include ../includes/header.pug
+  
+    button.iconMenu
+      span.icon-top
+      span.icon-center
+      span.icon-bottom
+
+    include ../includes/navigation.pug
 
     main.main.grid-main
       section.intro
@@ -64,4 +71,4 @@ html(lang="es")
 
     include ../includes/footer.pug
 
-    script(src="script/app.js") 
+    script(src="script/app.js" type="module")
