@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "App by the UTP",
   "main": "index.js",
-  "dependencies": {},
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-pug": "^5.0.0"

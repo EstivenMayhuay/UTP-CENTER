@@ -25,6 +25,7 @@
   --hHeader: 61px;
   --hCardCopy: 200px;
   --hCardCopyHead: 52px;
+  --hBtnMenu: 48px;
 }
 
 *,
@@ -67,29 +68,19 @@ body {
 
 /* Header */
 .header {
-  position: relative;
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: column;
   align-items: center;
-  padding: 24px;
-  max-width: 100%;
+  justify-content: center;
+  width: 100%;
   height: var(--hHeader);
   background: var(--white);
-  z-index: 30;
-}
-
-.logoUTP,
-.iconMenu {
-  position: absolute;
-  cursor: pointer;
-}
-
-.iconMenu {
-  right: 24px;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.25);
 }
 
 .logoUTP {
-  left: 24px;
+  width: 80px;
+  height: 24px;
 }
 
 .logoUTP > img {
@@ -100,19 +91,47 @@ body {
 }
 
 /* Navigation */
+.iconMenu {
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 4px;
+  width: var(--hBtnMenu);
+  height: var(--hBtnMenu);
+  outline: none;
+  border: none;
+  border-radius: 50%;
+  background: var(--red-variant);
+  z-index: 999;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.icon-top,
+.icon-center,
+.icon-bottom {
+  display: block;
+  width: 70%;
+  height: 5px;
+  background: var(--white);
+}
+
 .nav {
-  position: absolute;
-  top: var(--hHeader);
+  position: fixed;
+  top: 0;
   left: 0;
-  display: none;
-  width: 100%;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
   height: auto;
   background: var(--white);
-  padding: 24px;
-  box-shadow: 15px 15px 30px -15px rgba(0, 0, 0, 0.5);
-  overflow: hidden;
-  transition: height 0.4s;
-  z-index: 20;
+  z-index: 998;
 }
 
 .menu__list {
@@ -159,7 +178,7 @@ body {
   flex-flow: column;
   row-gap: 8px;
   height: 0;
-  transition: height 0.4s;
+  transition: height 0.4s ease;
 }
 
 .subMenu__list {
