@@ -26,6 +26,8 @@
   --hCardCopy: 200px;
   --hCardCopyHead: 52px;
   --hBtnMenu: 48px;
+
+  scroll-behavior: smooth;
 }
 
 *,
@@ -132,6 +134,11 @@ body {
   height: auto;
   background: var(--white);
   z-index: 998;
+}
+
+.menu {
+  outline: 2px solid blue;
+  overflow-y: scroll;
 }
 
 .menu__list {
