@@ -121,6 +121,21 @@ body {
   background: var(--white);
 }
 
+.activeIconMenu .icon-center {
+  display: none;
+}
+
+.activeIconMenu .icon-top {
+  transform: translate(0px, 4px) rotate(50deg);
+  transition: transform 0.4s ease;
+}
+
+.activeIconMenu .icon-bottom {
+  /*background: #000;*/
+  transform: translate(0px, -4px) rotate(-50deg);
+  transition: transform 0.4s ease;
+}
+
 .nav {
   position: fixed;
   top: 0;
@@ -479,41 +494,38 @@ videos {
 
 /* Desktop */
 @media screen and (min-width: 1024px) {
-  :root {
-    --headerGrid: 2;
-  }
-
   .grid {
     display: grid;
-    grid-template-columns: repeat(12, auto);
-    grid-template-rows: repeat(3, auto);
-    background: var(--white-variant);
+    grid-template-columns: repeat(11, 1fr);
+    grid-template-rows: 120px auto auto;
   }
 
   .grid-header {
-    grid-column: 1 / var(--headerGrid);
-    grid-row: 1 / 4;
-  }
-
-  .grid-main {
-    grid-column: var(--headerGrid) / 13;
+    grid-column: 1 / 4;
     grid-row: 1;
   }
 
+  .grid-nav {
+    grid-column: 1 / 4;
+    grid-row: 2 / 4;
+  }
+
+  .grid-main {
+    grid-column: 4 / 12;
+    grid-row: 1 / 4;
+  }
+
   .grid-footer {
-    grid-column: var(--headerGrid) / 13;
+    grid-column: 4 / 12;
     grid-row: 2;
   }
 
   /* Header */
   .header {
-    /*outline: 2px solid blue;*/
-    display: flex;
-    flex-flow: column;
-    align-items: flex-start;
-    row-gap: 24px;
+    position: relative;
     width: 100%;
-    height: 100%;
+    height: auto;
+    padding: 1em 0;
   }
 
   .iconMenu {
@@ -526,18 +538,24 @@ videos {
     left: 0;
     display: block;
     width: 140px;
+    height: 40px;
   }
 
   /* navigation */
   .nav {
     position: sticky;
-    left: 0;
     top: 0;
-    display: flex;
-    box-shadow: none;
-    width: 320px;
-    padding: 0;
-    z-index: 10;
+    left: 0;
+    display: block;
+    transform: none;
+    opacity: 1;
+    padding: 1em;
+    overflow: hidden;
+  }
+
+  .menu {
+    overflow: hidden;
+    position: relative;
   }
 
   /* Main */
@@ -545,6 +563,8 @@ videos {
     position: sticky;
     top: 0;
     left: 0;
+    bottom: 0;
+    right: 0;
     display: flex;
     flex-flow: column;
     align-items: center;

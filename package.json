@@ -4,7 +4,6 @@
   "description": "App by the UTP",
   "main": "index.js",
   "devDependencies": {
-    "gulp": "^4.0.2",
     "gulp-pug": "^5.0.0"
   },
   "scripts": {
@@ -12,5 +11,9 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "pug": "^3.0.2"
+  }
 }
